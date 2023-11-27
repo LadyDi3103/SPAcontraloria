@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+main {
+  padding: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  :host {
+    display: block;
+  }
+  header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #4770FF;
+    padding: 38px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #logo {
+    width: 100px; /* ajusta el ancho según tus necesidades */
+  
+/*    */
+:host {
+  display: block;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #4770FF;
+  padding: 15px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  width: 100px; /* ajusta el ancho según tus necesidades */
+}
+
+.logo_header {
+  width: 100%;
+  height: auto;
+}
+
+#search {
+  display: flex;
+  align-items: center;
+  /* background-color: #CA0000; */
+}
+#lupa{
+  background-color: #CA0000;
+  border: none;
+  padding: 0px;
+}
+#search input {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+
+
+footer {
+    display: block;
+      margin-top: auto;
+      text-align: center;
+      font-family: monospace;
+      font-size: 1.2vw;
+      font-weight: 500;
+      background-color: var(--claret-300);
+      width: 100%;
+      /* padding: 10px; */
+}
+.text-center {
+display: flex;
+justify-content: center;
+}
