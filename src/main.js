@@ -1,59 +1,131 @@
-// import router from './routes';
-// Este es el punto de entrada de tu aplicacion
-// window.addEventListener('load', router);
+let obrasInfo = [];
+let puentesInfo = [];
 
-// Detectamos cambio del hash
-
-// window.addEventListener('DOMContentLoaded', idUser);
-
-let lugaresInfo = []
-
-const conseguirLugares = () => {
-  fetch('https://www.datos.gov.co/resource/g373-n3yy.json')
+const conseguirObras = () => {
+  return fetch('https://www.datos.gov.co/resource/g373-n3yy.json')
     .then(response => response.json())
-    .then(lugares => {
-      console.log(lugares);
+    .then(obras => {
+      //console.log(obras);
 
-      lugares.forEach(lugar => {
-        let lugarInfo = {
-          posicion: { lat: lugar.punto.coordinates[1], lng: lugar.punto.coordinates[0] },
-          nombre: lugar.nombre_sede,
+      obras.forEach(obra => {
+        let obraInfo = {
+          posicion: { lat: obra.punto.coordinates[1], lng: obra.punto.coordinates[0] },
+          nombre: obra.nombre_sede,
+
         };
-        lugaresInfo.push(lugarInfo);
+
+        obrasInfo.push(obraInfo);
+      });
+    })
+    .then(conseguirPuentes)
+    .catch(error => {
+      console.error("Error al obtener obras:", error);
+    });
+};
+
+const conseguirPuentes = () => {
+  return fetch('https://books-tsfn.onrender.com/Obras')
+    .then(response => response.json())
+    .then(puentes => {
+      //console.log(puentes);
+
+      puentes.forEach(puente => {
+        let puenteInfo = {
+          posicion: { lat: puente.punto.coordinates[1], lng: puente.punto.coordinates[0] },
+          nombre: puente.NombreProy,
+          FechaDeInicio: puente.Fecha_Inicio,
+          FechaDeFin: puente.Fecha_Fin,
+          PorcentajeDeAvance: puente.Porcentaje_avance
+        };
+
+        puentesInfo.push(puenteInfo);
+      });
+    })
+    .then(miUbicacion)
+    .catch(error => {
+      console.error("Error al obtener puentes:", error);
+    });
+};
+
+const miUbicacion = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(usuarioUbicacion => {
+      let ubicacion = {
+        lat: usuarioUbicacion.coords.latitude,
+        lng: usuarioUbicacion.coords.longitude
+      };
+      console.log(ubicacion);
+      crearMapaYUbicar(ubicacion).then(() => console.log("Operaciones completadas."));
+    });
+  }
+};
+
+const crearMapaYUbicar = (obj) => {
+  const icon1 = {
+    url: "img/icono_negro.png",
+    scaledSize: new google.maps.Size(30, 30)
+  };
+
+  const icon2 = {
+    url: "img/obras.png",
+    scaledSize: new google.maps.Size(30, 30)
+  };
+
+  return new Promise((resolve, reject) => {
+    let mapa = new google.maps.Map(document.getElementById('map'), {
+      center: obj,
+      zoom: 10
+    });
+
+    let marcadorUsuario = new google.maps.Marker({
+      position: obj,
+      title: 'Tu ubicacion'
+    });
+
+    marcadorUsuario.setMap(mapa);
+
+    let marcadores = obrasInfo.map(obra => {
+      let marker = new google.maps.Marker({
+        position: obra.posicion,
+        title: obra.nombre,
+        map: mapa,
+        icon: icon1
       });
 
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(usuarioUbicacion => {
-          let ubicacion = {
-            lat: usuarioUbicacion.coords.latitude,
-            lng: usuarioUbicacion.coords.longitude,
-          };
-          dibujarMapa(ubicacion);
+      // Add click event listener to the marker
+      marker.addListener('click', () => {
+        // Show a popup with the message when the marker is clicked
+        const infoWindow = new google.maps.InfoWindow({
+          content: obra.nombre
         });
-      }
+        infoWindow.open(mapa, marker);
+      });
+
+      return marker;
     });
+
+    let marcadores2 = puentesInfo.map(puente => {
+      let marker = new google.maps.Marker({
+        position: puente.posicion,
+        title: puente.nombre,
+        map: mapa,
+        icon: icon2
+      });
+
+      // Add click event listener to the marker
+      marker.addListener('click', () => {
+        // Show a popup with the message when the marker is clicked
+        const infoWindow = new google.maps.InfoWindow({
+          content: `NOMBRE DE LA OBRA: ${puente.nombre}<br>Fecha de Inicio: ${puente.FechaDeInicio}<br>Fecha de Fin: ${puente.FechaDeFin}<br>Porcentaje de avance: ${puente.PorcentajeDeAvance}`
+        });
+        infoWindow.open(mapa, marker);
+      });
+
+      return marker;
+    });
+
+    resolve();
+  });
 };
 
-const dibujarMapa = (obj) => {
-  let mapa = new google.maps.Map(document.getElementById('map'), {
-    center: obj,
-    zoom: 4,
-  });
-
-  let marcadorUsuario = new google.maps.Marker({
-    position: obj,
-    title: 'Tu ubicación',
-  });
-
-  marcadorUsuario.setMap(mapa);
-
-  let marcadores = lugaresInfo.map(lugar => {
-    return new google.maps.Marker({
-      position: lugar.posicion,
-      title: lugar.nombre,
-      map: mapa,
-    });
-  });
-};
-
-conseguirLugares();
+conseguirObras();
