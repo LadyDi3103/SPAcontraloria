@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucha contra la corrupción</title>
   <link rel="stylesheet" href="./styles.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="icon" type="image/jpg" href="./assets/img/favicon.jpg" />
 
 </head>
@@ -15,46 +15,46 @@
 <body>
   <div id="root">
 
-        <!--CABECERA-->
-        <header class="content__header">
-         
-          <div id="logo">
-            <img src="./assets/img/logoCGR.png" alt="Logo" class='logo_header'> 
-        </div>
-      
-        <div id="search">
-            <input type="text" placeholder="Buscar...">
-            <button><img  id="lupa" src="./assets/img/search.svg" alt="Lupa"></button>
-        </div>
-      
-        <span class="material-symbols-outlined">
-      menu
+    <!--CABECERA-->
+    <header class="content__header">
+
+      <div id="logo">
+        <img src="./assets/img/logoCGR.png" alt="Logo" class='logo_header'>
+      </div>
+
+      <div id="search">
+        <input type="text" placeholder="Buscar...">
+        <button><img id="lupa" src="./assets/img/search.svg" alt="Lupa"></button>
+      </div>
+
+      <span class="material-symbols-outlined">
+        menu
       </span>
-      
-        <nav class="offcanvas-body">
-          <ul class="navbar_list navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item"><a href="#/home" class="nav-link">Prevención</a></li>
-            <li class="nav-item"><a href="#/dashboard" class="nav-link">Prevención</a></li>
-            <li class="nav-item"><a href="#/geo-colaborador" class="nav-link">Geo-Colaborador</a></li>
-            <li class="nav-item"><a href="#/home-admin" class="nav-link">Sesión Monitor</a></li>
-          </ul>
-        </nav>
 
-        </header>
+      <nav class="offcanvas-body">
+        <ul class="navbar_list navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item"><a href="#/home" class="nav-link">Prevención</a></li>
+          <li class="nav-item"><a href="#/dashboard" class="nav-link">Prevención</a></li>
+          <li class="nav-item"><a href="#/geo-colaborador" class="nav-link">Geo-Colaborador</a></li>
+          <li class="nav-item" id="login"><a href="#/home-admin" class="nav-link">Sesión Monitor</a></li>
+        </ul>
+      </nav>
 
-        <!-- NÚMEROS DE EMERGENCIA ANTE DESASTRES -->
+    </header>
 
-        <div class="grid text-center" style="--bs-columns: 9;">
-          <div>Defensa Civil 115</div>
-          <div>InfoSalud 113</div>
-          <div>Bomberos 116</div>
-          <div>Cruz Rojaa 01 266</div>
-          <div>Policia de Carreterasa 110</div>
-          <div>Policia Central 105</div>
-          <div>Samu 106</div>
-          <div>Alerta Médicaa 01 416 6777</div>
-          <div>Ambulancias de EsSalud 117</div>
-        </div>
+    <!-- NÚMEROS DE EMERGENCIA ANTE DESASTRES -->
+
+    <div class="grid text-center" style="--bs-columns: 9;">
+      <div>Defensa Civil 115</div>
+      <div>InfoSalud 113</div>
+      <div>Bomberos 116</div>
+      <div>Cruz Rojaa 01 266</div>
+      <div>Policia de Carreterasa 110</div>
+      <div>Policia Central 105</div>
+      <div>Samu 106</div>
+      <div>Alerta Médicaa 01 416 6777</div>
+      <div>Ambulancias de EsSalud 117</div>
+    </div>
 
     <!-- CONTENIDO CAROUSEL -->
     <div id="carouselExample" class="container-md carousel slide">
@@ -82,48 +82,75 @@
       </button>
     </div>
 
-   <!-- SECCIÓN CONTENEDORA DEL MAPA VISTA PERSONA COMÚN-->
-   <section id="container__map">
-    <div class="container">
-     
-          <div class="header-content">
-              <h1>¡Bienvenido(a) al Geocolaborador!</h1>
-              <h2>¡Tu participación es esencial para crear un entorno más seguro y transparente! </h2>
-          </div>
-      
-      <div class="main-content">
-          <h3>Querido Ciudadano, te damos la bienvenida a este espacio exclusivamente para ti. Aquí podras verificar el progreso de obras o identificar zonas de riesgo relacionadas con el Fenómeno del Niño Costero. Exprésate con 'Me gusta' o 'No me gusta', comparte tus comentarios y envíanos evidencia de obras abandonadas o zonas de riesgo sin atención. Explora los detalles de las obras con un simple clic. Tu participación es esencial para prevenir la corrupción, y qué mejor manera que con tu opinión y tus evidencias. Agradecemos sinceramente tu valiosa contribución.</h3>
+    <!-- SECCIÓN CONTENEDORA DEL MAPA VISTA PERSONA COMÚN-->
+    <section id="container__map">
+      <div class="container">
+
+        <div class="header-content">
+          <h1>¡Bienvenido(a) al Geocolaborador!</h1>
+          <h2>¡Tu participación es esencial para crear un entorno más seguro y transparente! </h2>
+        </div>
+
+        <div class="main-content">
+          <h3>Querido Ciudadano, te damos la bienvenida a este espacio exclusivamente para ti. Aquí podras verificar el
+            progreso de obras o identificar zonas de riesgo relacionadas con el Fenómeno del Niño Costero. Exprésate con
+            'Me gusta' o 'No me gusta', comparte tus comentarios y envíanos evidencia de obras abandonadas o zonas de
+            riesgo sin atención. Explora los detalles de las obras con un simple clic. Tu participación es esencial para
+            prevenir la corrupción, y qué mejor manera que con tu opinión y tus evidencias. Agradecemos sinceramente tu
+            valiosa contribución.</h3>
           <section id="map"></section>
+        </div>
       </div>
+    </section>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8">
+    </script>
+
+<!-- MODAL DE INICIO DE SESIÓN DEL LOGIN DEL MONITOR -->
+    <section id="container__login" style="display: none;">
+      <div class="container__login__monitor">
+        <form action="" id="form-login">
+          <label for="mail">EMAIL</label>
+          <input class="btn" type="email" id="mail" name="user_mail" title="El email es incorrecto"
+            placeholder="ejemplo@ejemplo.com" required />
+          <p id="errorEmail" class=input-error>*Ingresa un email válido.</p>
+          <label for="password">CONTRASEÑA</label>
+          <div class="icon-login">
+            <span class="icon-eye" id="icon-password">
+              <i class="fa-regular fa-eye-slash"></i>
+            </span>
+            <input class="btn" type="password" id="password" name="user_password" placeholder="**********" required />
+          </div>
+          <p id="errorPassword" class=input-error>*Contraseña [5-10] caracteres. </p>
+          <button id="button-login" type="submit">Iniciar Sesión</button>
+          <div id="links">
+            <p id="create-account">¿No tienes una cuenta? <a href="/register">Crea una</a></span></p>
+          </div>
+
+        </form>
+
+      </div>
+    </section>
+
+    <section id="container__monitor">
+      <div class="container__map__monitor">
+
+
+      </div>
+    </section>
+
+
+
+
+    <footer>
+      <p>© Derechos Reservados 2023</p>
+    </footer>
+<script src="main.js" type="module"></script>
+<script src="login.js" type="module"></script>
+    <script src="Geo-Colaborador.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
   </div>
-  </section>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8"></script>
-
-  <section id="container__login">
-    <div class="container__login__monitor">
-     
-
-  </div>
-  </section>
-
-  <section id="container__monitor">
-    <div class="container__map__monitor">
-     
-
-  </div>
-  </section>
-
-
-
-
-   <footer>
-     <p>© Derechos Reservados 2023</p>
-   </footer>
-
-   <script src="main.js" type="module"></script>
-   <script src="Geo-Colaborador.js" type="module"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
- </div>
 </body>
 
 </html>

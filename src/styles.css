@@ -1,83 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
-/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+s:root {
+  --claret-50: #fdf4f3;
+  --claret-100: #fce7e7;
+  --claret-300: #f3aeb2;
+  --claret-400: #ec8089;
+  --claret-500: #e15262;
+}
 
 body {
-    font-family: 'Lato', sans-serif;
-}
-body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-header, footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-
-nav {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--claret-100);
   display: flex;
-  justify-content: space-around;
-}
-
-main {
-  padding: 20px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-  }
-  :host {
-    display: block;
-  }
-  header, footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-
-    font-family: Arial, sans-serif;
-  }
-  
-  header {
-    background-color: #4770FF;
-    padding: 38px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #logo {
-    width: 100px; /* ajusta el ancho según tus necesidades */
-  
-/*    */
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
   background-color: #4770FF;
-  padding: 15px;
+  padding: 38px;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -86,60 +27,139 @@ header {
 
 #logo {
   width: 100px; /* ajusta el ancho según tus necesidades */
-}
-
-.logo_header {
-  width: 100%;
-  height: auto;
-}
-
-#search {
-  display: flex;
-  align-items: center;
-  /* background-color: #CA0000; */
-}
-#lupa{
-  background-color: #CA0000;
-  border: none;
-  padding: 0px;
-}
-#search input {
-  padding: 8px;
-  border: none;
-  border-radius: 5px;
+  height: 330px;
 }
 
 nav {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
+main {
+  padding: 20px;
 }
 
+#root {
 
+  margin: 0 auto;
 
-footer {
-    display: block;
-      margin-top: auto;
-      text-align: center;
-      font-family: monospace;
-      font-size: 1.2vw;
-      font-weight: 500;
-      background-color: var(--claret-300);
-      width: 100%;
-      /* padding: 10px; */
-}
-.text-center {
-display: flex;
-justify-content: center;
+  background-color: #ffffff;
+
 }
 
-html, head {
+h1 {
+  color: var(--claret-500);
+  font-size: 2.0vw;
   margin: 0;
-  padding: 0;
+}
+
+.content__header {
+  display: flex;
+}
+
+.content__header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 65px;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+}
+
+.content__header h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+}
+
+table {
+  text-align: center;
+  margin: 50px auto;
+  padding: 15px;
+}
+
+.buttons {
+  border: 0px;
+  padding: 1.5vw;
+  width: 220px;
+  height: 65px;
+  background-color: var(--claret-500);
+  border-radius: 10px;
+  margin-top: 5%;
+  color: #fff;
+  font-size: x-large;
+  font-family: monospace;
+  box-shadow: 3px 3px 7px 1px #898989;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.buttons:hover {
+  background-color: #FFC107;
+}
+
+.link__code {
+  width: 100%;
+  font-size: 22px;
+  font-family: arial;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.link_active {
+  border-bottom: 2px solid #008F99;
+  color: #008F99 !important;
+  padding-bottom: 5px;
+}
+
+.link__code a {
+  text-decoration: none;
+  text-align: center;
+  color: #666666;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#positions {
+  width: 3em;
+}
+.show{
+  display: block;
+}
+footer {
+  margin-top: auto;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.2vw;
+  font-weight: 500;
+  background-color: var(--claret-300);
+  width: 100%;
+}
+
+.msg-check {
+  width: 97%;
+  height: auto;
+  min-height: 130px;
+  background-color: #DADADA;
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 10px 1px #898989;
+}
+
+.box_msg_style {
+  width: 100%;
+  height: 130px;
+  resize: none;
+  outline: 0px;
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -148,19 +168,15 @@ html, head {
   padding: 20px;
 }
 
+/* form {
+  max-width: 100%;
+} */
+
 header {
   background-color: #CA0000;
   color: white;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
-}
-
-header h1 {
-  margin: 0;
-}
-
-header p {
-  font-style: italic;
 }
 
 #map {
@@ -231,8 +247,8 @@ button:hover {
 }
 
 /* Agregado para hacer más responsivo */
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .form-container {
-      max-width: 100%;
+    max-width: 100%;
   }
-}
+} */

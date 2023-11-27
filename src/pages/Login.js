@@ -140,3 +140,26 @@
 //   return mainLogin; // es el div contenedor de la estructura html
 // };
 // export default Login;
+
+document.getElementById('login').addEventListener('click', () => {
+    // Muestra el modal de inicio de sesión
+    const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+    loginModal.show();
+  });
+  
+  document.getElementById('loginForm').addEventListener('submit', (event) => {
+    event.preventDefault();
+  
+    // Aquí debes agregar lógica para verificar las credenciales (correo y contraseña)
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+  
+    // Ejemplo básico: Verificación de credenciales (deberías implementar esto en el servidor)
+    if (email === 'usuario@correo.com' && password === 'contraseña123') {
+      // Credenciales correctas, redirige a la página del dashboard
+      window.location.href = 'dashboard.html';
+    } else {
+      // Credenciales incorrectas, muestra un mensaje de error (puedes personalizar según tu diseño)
+      alert('Credenciales incorrectas. Intenta de nuevo.');
+    }
+  });
