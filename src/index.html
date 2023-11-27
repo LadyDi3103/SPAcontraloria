@@ -1,32 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta name="description" content="Control ciudadano en pro de combatir la corrupción">
-    <meta name="theme-color" content="#50315e">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/grogu.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="...">
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Combatiendo la corrupción</title>
-</head>
-  <body>
-    <header></header>
-    <main>
-      <section id="root"></section>
-    </main>
-    <footer id="footer"></footer>
-    
-    JavaScript de Bootstrap (Requiere Popper.js y jQuery) -->
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="..." crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="..." crossorigin="anonymous"></script>
-  <script type="module" src="main.js"></script>
-  </body>
-</html>
--->
 
 <!DOCTYPE html>
 <html lang="es">
@@ -48,7 +19,7 @@
         <header class="content__header">
          
           <div id="logo">
-            <img src="./assets/img/descarga.jpeg" alt="Logo" class='logo_header'> 
+            <img src="./assets/img/logoCGR.png" alt="Logo" class='logo_header'> 
         </div>
       
         <div id="search">
@@ -70,6 +41,8 @@
         </nav>
 
         </header>
+
+        <!-- NÚMEROS DE EMERGENCIA ANTE DESASTRES -->
 
         <div class="grid text-center" style="--bs-columns: 9;">
           <div>Defensa Civil 115</div>
@@ -110,21 +83,8 @@
           </button>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div>
-       <!--CONTENEDOR DE LA BIENVENIDA-->
+    <!-- <div>
+       CONTENEDOR DE LA BIENVENIDA
       <section id="section0" style="display: block;">
         <table style="text-align: center;">
           <tr>
@@ -141,95 +101,25 @@
           </tr>
         </table>
 
-      </section>
+      </section> -->
 
-      <!--CONTENEDOR DEL CIFRADO--> 
-      <section id="section1" style="display: none;">
-
-        <div id="container1">
-          
-          <!--CODIFICAR BOX-->
-          <!-- <div>
-            <img id="silent" src="img/quiet-silence.gif" alt="silencio">
-          </div> -->
-
-          <div id="content__msg__encode" class="msg-style display_block">
-
-        <!--ENLACES CODIFICADO Y DECODIFICADO-->
-        <div id="encode-decode" class="link__code">
-          <a href="#" id="link__encode" class="link_active">Codificar</a>
-          <a href="#" id="link__decode" >Decodificar</a>
-        </div>
-
-            <p>Mensaje a Cifrar:</p>
-            <div class="content__offset">
-              <textarea name="text" id="aCifrar" class="box_msg_style" placeholder="Ingrese su mensaje..." cols="30" rows="10"></textarea>
-            </div>
-
-
-            <label class="label">Ingrese N° de desplazamiento</label>
-            <input type="number" id="positions" min="1" value="1">
-
-            <!-- <p>Posiciones:  -->
-              <!-- <input type="number" id="positions" min="1" value="1">  -->
-              <button id="btnCodificar" class="buttons" type="submit"     value="Codificar">Codifica tu Mensaje</button></p>
-
-              <!--AQUÍ IRÁ EL MENSAJE CODIFICADO-->
-
-              <div id="msg-encode" class="msg-ckeck">
-                <p id="msg-encode-check"></p>
-              </div>
-
-            <button onclick="location.reload();" class="buttons">Limpiar</button>
-
-            <!-- <h1>Mensaje cifrado:</h1>
-            <div id="msjCifrado">
-              <span id="aquiVa">Aquí iría el mensaje cifrado</span>
-            </div> -->
-          </div>
-
-          <!--DECODIFICAR BOX-->
-
-          <div id="content__msg__decode" class="msg-style display_none">
-            <p>Mensaje a Descifrar:</p>
-            <textarea id="box-msg-decode" class="box_msg_style" placeholder="Ingrese su mensaje..." name="text" id="aCifrar1" id="box_msg_decode" rows="15"></textarea>
-            
-            <div class="content-offset">
-              <label class="label">Ingrese N° de desplazamiento</label>
-              <input type="number" id="n_offset_d" class="n_offset_style" min="1" value="1">
-          </div>
-
-            <button id="btnDecodificar" class="buttons">Decodifica tu Mensaje</button>
-            <div id="msg-decode" class="msg-ckeck">
-              <p id="msg-decode-check"></p>
-          </div>
-          <button onclick="location.reload();" class="buttons">Limpiar</button>
-
-            <!-- <h1>Mensaje decifrado:</h1>
-            <div id="msjDecifrado">
-
-              <span id="aquiVaDecifrado">Aquí iría el mensaje cifrado</span>
-            </div> -->
-          </div>
-
-        </div>
-
-      </section>
-
-    </div>
-
-  </div>
+  
 
   <!-- SECCIÓN CONTENEDORA DEL MAPA -->
-  <section id="map"></section>
+  <section id="map" style="display: block;>
+
+  </section>
+
   <footer>
     <p>  ©Derechos Reservados 2023 </p>
   </footer>
-  <script src="main.js" type="module"></script>
+
+  <script src= "main.js" type="module"></script>
+  <script src="Geo-Colaborador.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> -->
 
-    
+</div>
 </body>
 
 </html>
