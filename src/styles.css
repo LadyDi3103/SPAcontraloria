@@ -10,19 +10,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
-  background-color: var(--claret-100);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 header {
-  background-color: #4770FF;
-  padding: 38px;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: rgb(0, 149, 199);
+  color: #DADADA;
 }
 
 #logo {
@@ -38,14 +32,6 @@ nav {
 
 main {
   padding: 20px;
-}
-
-#root {
-
-  margin: 0 auto;
-
-  background-color: #ffffff;
-
 }
 
 h1 {
@@ -171,13 +157,6 @@ footer {
 /* form {
   max-width: 100%;
 } */
-
-header {
-  background-color: #CA0000;
-  color: white;
-  padding: 15px;
-  text-align: center;
-}
 
 #map {
   width: 100%;
