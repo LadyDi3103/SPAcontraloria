@@ -1,0 +1,242 @@
+html, head {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.header-content{
+  background-color: #CA0000;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+.header-content h1 {
+  margin: 0;
+}
+.header-content p {
+  font-style: italic;
+}
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+header {
+  background-color: rgb(0, 149, 199);
+  color: white;
+  font-weight: 500;
+}
+
+#logo {
+  margin-right: auto;
+}
+
+.navbar-toggler {
+  order: 1;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+}
+
+/* /----CARROUSEL----/ */
+
+#carouselExample {
+  max-width: 100%;
+  max-height: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+#carouselExample .carousel-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.form-group {
+  display: grid;
+  gap: 10px;
+}
+
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+select {
+  margin-top: 10px;
+}
+button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.yes-no-options {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.question {
+  font-weight: bold;
+}
+
+.mi-cuadro {
+  border: 2px solid #333;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+
+.observations {
+  margin-top: 10px;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.count {
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+/* cARDS NÚMERO DE EMERGENCIA */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.grid div {
+  padding: 1rem;
+  border: 5px solid rgb(0, 149, 199);
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 149, 199);
+  font-weight: 900;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.grid div:hover {
+  background-color: rgb(0, 149, 199);
+  color: white;
+}
+footer{
+  text-align: center;
+}
+
+/* /-----MEDIA QUERIES----/ */
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    order: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgb(0, 149, 199);
+    z-index: 1;
+    display: none;
+    align-items: center;
+  }
+
+  .navbar-toggler:focus + .navbar-nav {
+    display: flex;
+  }
+
+  .navbar-nav a {
+    margin: 10px 0;
+  }
+
+  #carouselExample {
+    max-height: 200px; 
+  }
+
+  #carouselExample .carousel-inner img {
+    height: auto; /* Ajusta la altura automáticamente */
+    max-width: 100%;
+  }
+}
+/* Agregado para hacer más responsivo */
+@media only screen and (max-width: 600px) {
+  .form-container {
+      max-width: 100%;
+  }
+}
