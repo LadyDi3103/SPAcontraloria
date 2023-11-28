@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="icon" type="image/jpg" href="./assets/img/favicon.jpg" />
-
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"></script> -->
 </head>
 
 <body>
@@ -21,7 +21,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <!-- Logo en el extremo izquierdo -->
           <div id="logo">
-            <img src="./assets/img/logoCGR.png" alt="Logo" class='logo_header'>
+            <img src="./assets/img/imgContraloriaBlanco.png" alt="Logo" class='logo_header'>
           </div>
           <!-- Botón hamburguesa y menú en el extremo derecho -->
           <nav class="navbar navbar-expand-lg navbar-dark">
@@ -31,10 +31,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav w_menu">
-                <li class="nav-item"><a class="nav-link" href="#/home" tabindex="1">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html" tabindex="1">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#/dashboard" tabindex="2">Prevención</a></li>
-                <li class="nav-item"><a class="nav-link" href="#/geo-colaborador" tabindex="3">Geo-Colaborador</a></li>
-                <li class="nav-item" id="login"><a class="nav-link" href="#/home-admin" tabindex="4">Sesión Monitor</a>
+                <li class="nav-item"><a class="nav-link" href="indexPeople.html" tabindex="3">Geo-Colaborador</a></li>
+                <li class="nav-item" id="login"><a class="nav-link" href="indexMonitor.html" tabindex="4">Sesión Monitor</a>
                 </li>
               </ul>
             </div>
@@ -44,35 +44,35 @@
     </header>
 
 
-<!-- CONTENIDO CAROUSEL -->
-<div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
+    <!-- CONTENIDO CAROUSEL -->
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
 
-    <div class="carousel-item active">
-      <img src="./assets/img/reporta.png" class="d-block w-100" alt="Reporta la Corrupción">
+        <div class="carousel-item active">
+          <img src="./assets/img/reporta.png" class="d-block w-100" alt="Reporta la Corrupción">
+        </div>
+        <div class="carousel-item active">
+          <img src="./assets/img/33millones.jpg" class="d-block w-100" alt="Campaña contra la Corrupción">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/previene.jpg" class="d-block w-100" alt="Previene la Corrupción">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/informate.png" class="d-block w-100" alt="informate sobre Corrupción">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/img/combate.jpg" class="d-block w-100" alt="Combate la Corrupción">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-item active">
-      <img src="./assets/img/33millones.jpg" class="d-block w-100" alt="Campaña contra la Corrupción">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/previene.jpg" class="d-block w-100" alt="Previene la Corrupción">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/informate.png" class="d-block w-100" alt="informate sobre Corrupción">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/combate.jpg" class="d-block w-100" alt="Combate la Corrupción">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
     <!-- NÚMEROS DE EMERGENCIA ANTE DESASTRES -->
 
@@ -87,29 +87,6 @@
       <div>Alerta Médicaa 01 416 6777</div>
       <div>Ambulancias de EsSalud 117</div>
     </div>
-
-    <!-- SECCIÓN CONTENEDORA DEL MAPA VISTA PERSONA COMÚN-->
-    <section id="container__map">
-      <div class="container">
-
-        <div class="header-content">
-          <h1>¡Bienvenido(a) al Geocolaborador!</h1>
-          <h2>¡Tu participación es esencial para crear un entorno más seguro y transparente! </h2>
-        </div>
-
-        <div class="main-content">
-          <h3>Querido Ciudadano, te damos la bienvenida a este espacio exclusivamente para ti. Aquí podras verificar el
-            progreso de obras o identificar zonas de riesgo relacionadas con el Fenómeno del Niño Costero. Exprésate con
-            'Me gusta' o 'No me gusta', comparte tus comentarios y envíanos evidencia de obras abandonadas o zonas de
-            riesgo sin atención. Explora los detalles de las obras con un simple clic. Tu participación es esencial para
-            prevenir la corrupción, y qué mejor manera que con tu opinión y tus evidencias. Agradecemos sinceramente tu
-            valiosa contribución.</h3>
-          <section id="map"></section>
-        </div>
-      </div>
-    </section>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8">
-    </script>
 
     <!-- MODAL DE INICIO DE SESIÓN DEL LOGIN DEL MONITOR -->
     <section id="container__login" style="display: none;">
@@ -132,28 +109,18 @@
         </form>
       </div>
     </section>
+<footer>
+  <p>© Derechos Reservados 2023</p>
+</footer>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8"></script>
+<script type="module" src="main.js"></script>
 
 
-
-    <section id="container__monitor">
-      <div class="container__map__monitor">
-
-
-      </div>
-    </section>
-
-
-
-
-    <footer>
-      <p>© Derechos Reservados 2023</p>
-    </footer>
-
-    <script src="main.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
-  </div>
 </body>
 
 </html>
