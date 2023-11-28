@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="styleMonitor.css">
+    <title>Maps</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>¡Bienvenido(a) al Geocolaborador!</h1>
+                <h2>¡Tu participación es esencial para crear un entorno más seguro y transparente! </h2>
+            </div>
+        </header>
+        <div class="main-content">
+            <h3>Querido Monitor, te ofrecemos una nueva vía para que ingreses tus reportes, permitiéndote llevar a cabo el control social en obras públicas de manera más rápida y eficiente. Estamos aquí para facilitar tu labor y brindarte todo el apoyo necesario. ¡Gracias por tu compromiso y dedicación!</h3>
+            <section id="map"></section>
+            <div id="comments-container">
+
+        </div>
+    </div>
+
+    <script src="scriptMonitor.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8"></script>
+    <div class="container">
+        <div id="likeButton" class="button" onclick="handleInteraction('like')">👍 Like</div>
+        <span id="likeCount" class="count">0</span>
+        <div id="dislikeButton" class="button" onclick="handleInteraction('dislike')">👎 Dislike</div>
+        <span id="dislikeCount" class="count">0</span>
+    </div>
+    <a href="formulario.html">Clic aquí para registrar tus reportes de visita a las obras</a>
+
+</body>
+</html>
+
+
+      
+
+  
+

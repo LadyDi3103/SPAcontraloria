@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="stylePeople.css">
+    <title>Maps</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>¡Bienvenido(a) al Geocolaborador!</h1>
+                <h2>¡Tu participación es esencial para crear un entorno más seguro y transparente! </h2>
+            </div>
+        </header>
+        <div class="main-content">
+            <h3>Querido Ciudadano, te damos la bienvenida a este espacio exclusivamente para ti. Aquí podras verificar el progreso de obras o identificar zonas de riesgo relacionadas con el Fenómeno del Niño Costero. Exprésate con 'Me gusta' o 'No me gusta', comparte tus comentarios y envíanos evidencia de obras abandonadas o zonas de riesgo sin atención. Explora los detalles de las obras con un simple clic. Tu participación es esencial para prevenir la corrupción, y qué mejor manera que con tu opinión y tus evidencias. Agradecemos sinceramente tu valiosa contribución.</h3>
+            <section id="map"></section>
+            <div id="comments-container">
+
+        </div>
+    </div>
+
+    <script src="scriptPeople.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8"></script>
+    <div class="container">
+        <div id="likeButton" class="button" onclick="handleInteraction('like')">👍 Like</div>
+        <span id="likeCount" class="count">0</span>
+        <div id="dislikeButton" class="button" onclick="handleInteraction('dislike')">👎 Dislike</div>
+        <span id="dislikeCount" class="count">0</span>
+    </div>
+    
+
+</body>
+</html>
+
+
+      
+
+  
+

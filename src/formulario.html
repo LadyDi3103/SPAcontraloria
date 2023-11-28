@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de visita de obra</title>
+    <link rel="stylesheet" href="styleMonitor.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>REPORTE DE VISITA DE OBRA DEL MONITOR CIUDADANO DE CONTROL</h1>
+        </div>
+    </header>
+    <div class="form-container">
+        <form id="myForm">
+            <div class="form-group">
+                <label for="visitDate">Fecha de la visita:</label>
+                <input type="text" id="visitDate" name="visitDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="visitHour">HORA:</label>
+                <input type="text" id="visitHour" name="visitHour" required>
+            </div>
+
+            <div class="form-group">
+                <label for="executingEntity">ENTIDAD EJECUTORA:</label>
+                <input type="text" id="executingEntity" name="executingEntity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="workName">NOMBRE DE LA OBRA:</label>
+                <input type="text" id="workName" name="workName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="executionMode">MODALIDAD DE EJECUCION DE OBRA:</label>
+                <input type="text" id="executionMode" name="executionMode" required>
+            </div>
+
+            <div class="form-group">
+                <label for="uniqueCode">CODIGO UNICO DE LA OBRA (CUI):</label>
+                <input type="text" id="uniqueCode" name="uniqueCode" required>
+            </div>
+
+            <h2>Responda las siguientes preguntas, tome una foto que sustente esta respuesta:</h2>
+            <div class="mi-cuadro">
+                <div class="question-box">
+                    <div class="yes-no-options">
+                        <div class="question">
+                            <label for="contract">¿Tiene contrato de ejecución de obra?</label>
+                        </div>
+                        <br>
+                        <div class="answers">
+                            <input type="radio" name="contract" value="yes"> Sí
+                            <input type="radio" name="contract" value="no"> No
+                            <input type="file" id="contractPicture" name="contractPicture">
+                            <label for="contractObservations">Observaciones:</label>
+                            <textarea id="contractObservations" name="contractObservations" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="yes-no-options">
+                        <div class="question">
+                            <label for="approvedTechnicalFile">¿La obra se ejecuta con el expediente técnico aprobado?, verifique que el expediente técnico contenga los sellos y firmas, del proyectista y funcionarios de la Entidad.</label>
+                        </div>
+                        <br>
+                        <div class="answers">
+                            <input type="radio" name="approvedTechnicalFile" value="yes"> Sí
+                            <input type="radio" name="approvedTechnicalFile" value="no"> No
+                            <input type="file" id="approvedTechnicalFilePicture" name="approvedTechnicalFilePicture">
+                            <label for="approvedTechnicalFileObservations">Observaciones:</label>
+                            <textarea id="approvedTechnicalFileObservations" name="approvedTechnicalFileObservations" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="yes-no-options">
+                        <div class="question">
+                            <label for="contractStartDate">Se encuentra señalado en el cuaderno de obra, el "inicio del plazo contractual? si la respuesta es "SI", adjunte foto del asiento de obra.</label>
+                        </div>
+                        <br>
+                        <div class="answers">
+                            <input type="radio" name="contractStartDate" value="yes"> Sí
+                            <input type="radio" name="contractStartDate" value="no"> No
+                            <input type="file" id="contractStartDatePicture" name="contractStartDatePicture">
+                            <label for="contractStartDateObservations">Observaciones:</label>
+                            <textarea id="contractStartDateObservations" name="contractStartDateObservations" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>¿Cual es el estado de la obra?</h2>
+            <select id="workStatus" name="workStatus">
+                <option value="execution">En ejecución</option>
+                <option value="paused">Paralizada</option>
+                <option value="completed">Ejecutada</option>
+            </select>
+
+            <div class="form-group">
+                <label for="comments">Deja un comentario adicional si es que así lo deseas:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
