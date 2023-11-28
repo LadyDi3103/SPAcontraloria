@@ -1,3 +1,60 @@
+let likeCount = 0;
+let dislikeCount = 0;
+let GlobalId = 0;
+
+async function fetchData() {
+    try {
+        const response = await fetch('https://books-tsfn.onrender.com/Obras/' + GlobalId);
+        const data = await response.json();
+
+        likeCount = data.like_total;
+        dislikeCount = data.dislike_total;
+
+        document.getElementById('likeCount').innerText = likeCount;
+        document.getElementById('dislikeCount').innerText = dislikeCount;
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        // Agregar más información sobre el error
+        console.error('Error details:', error.message, error.stack);
+    }
+}
+
+async function handleInteraction(interactionType) {
+    await fetchData();
+
+    if (interactionType === 'like') {
+        likeCount = await updateCounter('like', likeCount);
+        document.getElementById('likeCount').innerText = likeCount;
+    } else if (interactionType === 'dislike') {
+        dislikeCount = await updateCounter('dislike', dislikeCount);
+        document.getElementById('dislikeCount').innerText = dislikeCount;
+    }
+}
+
+async function updateCounter(type, count) {
+    try {
+        const updateResponse = await fetch('https://books-tsfn.onrender.com/Obras/' + GlobalId, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                [type + '_total']: count + 1
+            })
+        });
+
+        const updateData = await updateResponse.json();
+
+        return count + 1;
+
+    } catch (error) {
+        console.error('Error updating data:', error);
+        return count;
+    }
+}
+
+
 let obrasInfo = [];
 let puentesInfo = [];
 
@@ -41,7 +98,8 @@ const conseguirPuentes = () => {
                     nombre: puente.NombreProy,
                     FechaDeInicio: puente.Fecha_Inicio,
                     FechaDeFin: puente.Fecha_Fin,
-                    PorcentajeDeAvance: puente.Porcentaje_avance
+                    PorcentajeDeAvance: puente.Porcentaje_avance,
+                    currentId: puente.id
                 };
 
                 puentesInfo.push(puenteInfo);
@@ -124,6 +182,10 @@ const crearMapaYUbicar = (obj) => {
                 const infoWindow = new google.maps.InfoWindow({
                     content: `NOMBRE DE LA OBRA: ${puente.nombre}<br>Fecha de Inicio: ${puente.FechaDeInicio}<br>Fecha de Fin: ${puente.FechaDeFin}<br>Porcentaje de avance: ${puente.PorcentajeDeAvance}`
                 });
+
+                GlobalId = puente.currentId
+
+                fetchData();
                 infoWindow.open(mapa, marker);
             });
 
@@ -135,11 +197,11 @@ const crearMapaYUbicar = (obj) => {
 };
 
 conseguirObras();
-// ****************
+
 const monitorLoginLink = document.getElementById('login');
 const showModal = document.getElementById('container__login');
-const hideModal = document.getElementById('button-login'); 
-const homeAdminSection = document.getElementById('container__monitor'); 
+const hideModal = document.getElementById('button-login');
+const homeAdminSection = document.getElementById('container__monitor');
 
 monitorLoginLink.addEventListener('click', () => {
     showModal.style.display = 'block';
