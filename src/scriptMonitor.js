@@ -120,12 +120,12 @@ const miUbicacion = () => {
 
 const crearMapaYUbicar = (obj) => {
   const icon1 = {
-    url: "img/icono_negro.png",
+    url: "./assets/img/icono_negro.png",
     scaledSize: new google.maps.Size(30, 30)
   };
 
   const icon2 = {
-    url: "img/obras.png",
+    url: "./assets/img/obras.png",
     scaledSize: new google.maps.Size(30, 30)
   };
 
