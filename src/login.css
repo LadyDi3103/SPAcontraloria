@@ -1,0 +1,14 @@
+.centered-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* O ajusta la altura según tus necesidades */
+}
+
+.container__login__monitor {
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+}
