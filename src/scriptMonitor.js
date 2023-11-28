@@ -1,3 +1,13 @@
+// scriptMonitor.js
+
+// Obten la clave de la variable de entorno
+const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+
+// Usa la clave en la solicitud de la API
+const scriptElement = document.createElement('script');
+scriptElement.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
+document.head.appendChild(scriptElement);
+
 let likeCount = 0;
 let dislikeCount = 0;
 let GlobalId = 0;
