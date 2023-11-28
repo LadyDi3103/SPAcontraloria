@@ -1,5 +1,3 @@
-import swal from 'sweetalert';
-
 let obrasInfo = [];
 let puentesInfo = [];
 
@@ -138,20 +136,22 @@ const crearMapaYUbicar = (obj) => {
 
 conseguirObras();
 // ****************
-const monitorLogin = document.getElementById('login')
-const showModal= document.getElementById('container__login')
-const hideModal= document.getElementById('')
+const monitorLoginLink = document.getElementById('login');
+const showModal = document.getElementById('container__login');
+const hideModal = document.getElementById('button-login'); // Agrega un id al botón de cerrar el modal
 
-monitorLogin.addEventListener('click',() =>{
-showModal.classList.add('show');
-})
+monitorLoginLink.addEventListener('click', () => {
+    showModal.style.display = 'block';
+});
 
-monitorLogin.addEventListener('click',() =>{
-
-
-} )
-hideModal.addEventListener('click',() =>{
+hideModal.addEventListener('click', () => {
+    showModal.style.display = 'none';
+});
 
 
-} )
-// ********************
+if (email === 'beatriz@monitor.pe' && password === '123456'){
+
+}
+ else {
+alert('Credenciales incorrectas. Intenta de nuevo.');
+ }
