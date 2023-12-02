@@ -1,29 +1,36 @@
-html, head {
+html,
+head {
   margin: 0;
   padding: 0;
 }
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
 }
+
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
-.header-content{
+
+.header-content {
   background-color: #CA0000;
   color: white;
   padding: 10px;
   text-align: center;
 }
+
 .header-content h1 {
   margin: 0;
 }
+
 .header-content p {
   font-style: italic;
 }
+
 #map {
   width: 100%;
   height: 400px;
@@ -86,6 +93,7 @@ header {
   height: 100%;
   object-fit: cover;
 }
+
 .form-group {
   display: grid;
   gap: 10px;
@@ -112,6 +120,7 @@ input[type="file"] {
 select {
   margin-top: 10px;
 }
+
 button {
   padding: 10px;
   background-color: #333;
@@ -190,7 +199,8 @@ button:hover {
   background-color: rgb(0, 149, 199);
   color: white;
 }
-footer{
+
+footer {
   text-align: center;
 }
 
@@ -217,7 +227,7 @@ footer{
     align-items: center;
   }
 
-  .navbar-toggler:focus + .navbar-nav {
+  .navbar-toggler:focus+.navbar-nav {
     display: flex;
   }
 
@@ -226,17 +236,115 @@ footer{
   }
 
   #carouselExample {
-    max-height: 200px; 
+    max-height: 200px;
   }
 
   #carouselExample .carousel-inner img {
-    height: auto; /* Ajusta la altura automáticamente */
+    height: auto;
+    /* Ajusta la altura automáticamente */
     max-width: 100%;
   }
 }
+
 /* Agregado para hacer más responsivo */
 @media only screen and (max-width: 600px) {
   .form-container {
-      max-width: 100%;
+    max-width: 100%;
   }
+}
+
+/* MODIFICACIONES MATERIALIZE */
+
+/* header */
+
+.nav-wrapper {
+  padding: 0 30px;
+  background-color: #CD312B;
+}
+.sidenav{
+  background-color: #CD312B;
+}
+.sidenav li a{
+  color: #ffffff;
+}
+
+.logo {
+  height: 80px;
+}
+
+.brand-logo {
+  font-size: 20px;
+  margin: 0;
+  font-family: ui-serif;
+}
+
+/* carousel */
+
+.carousel_images--first {
+  background-image: url(assets/carousel/carousel1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+.carousel_images--first-title{
+  margin-top: 60px;
+}
+.carousel_images--first-paragraph{
+  margin: 0 100px;
+}
+.carousel_images--second{
+  background-image: url(assets/carousel/carousel5.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+.carousel_images--thrid{
+  background-image: url(assets/carousel/portada3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+.carousel_images--fourth{
+  background-image: url(assets/carousel/portada4carousel.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+.carousel{
+  height: 60vh;
+}
+
+
+/* footer */
+.page__footer{
+  padding-top: 0;
+  background-color: #0F2A44;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+/* container news */
+
+.container-news{
+  padding: 30px 50px;
+}
+
+.title-news{
+padding-bottom: 20px;
+text-align: center;
+color: white;
+}
+
+.container-numbers-emergency {
+
+  background-color: #CD312B;
+
+}
+.emergencyNumber{
+
+    background-color: white;
+    padding: 10px 10px 0px;
+    border-radius: 15px;
+
 }
