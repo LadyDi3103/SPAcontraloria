@@ -27,31 +27,35 @@ async function fetchData() {
 }
 
 async function handleInteraction(interactionType) {
-  await fetchData();
+  if (GlobalId !== 0){
+      await fetchData();
 
-  if (interactionType === 'like') {
-    if (!obrasReacciones[GlobalId].likePressed && !obrasReacciones[GlobalId].dislikePressed) {
-      obrasReacciones[GlobalId].likePressed = true;
-      likeCount = await updateCounter('like', likeCount + 1);
-    } else if (obrasReacciones[GlobalId].likePressed && !obrasReacciones[GlobalId].dislikePressed){
-      obrasReacciones[GlobalId].likePressed = false;
-      likeCount = await updateCounter('like', likeCount - 1);
-    }
-    document.getElementById('likeCount').innerText = likeCount;
+      if (interactionType === 'like') {
+        if (!obrasReacciones[GlobalId].likePressed && !obrasReacciones[GlobalId].dislikePressed) {
+          obrasReacciones[GlobalId].likePressed = true;
+          likeCount = await updateCounter('like', likeCount + 1);
+        } else if (obrasReacciones[GlobalId].likePressed && !obrasReacciones[GlobalId].dislikePressed){
+          obrasReacciones[GlobalId].likePressed = false;
+          likeCount = await updateCounter('like', likeCount - 1);
+        }
+        document.getElementById('likeCount').innerText = likeCount;
 
-  } else if (interactionType === 'dislike') {
-    if (!obrasReacciones[GlobalId].dislikePressed && !obrasReacciones[GlobalId].likePressed) {
-      obrasReacciones[GlobalId].dislikePressed = true;
-      dislikeCount = await updateCounter('dislike', dislikeCount + 1);
+      } else if (interactionType === 'dislike') {
+        if (!obrasReacciones[GlobalId].dislikePressed && !obrasReacciones[GlobalId].likePressed) {
+          obrasReacciones[GlobalId].dislikePressed = true;
+          dislikeCount = await updateCounter('dislike', dislikeCount + 1);
 
-    } else if (obrasReacciones[GlobalId].dislikePressed && !obrasReacciones[GlobalId].likePressed) {
-      obrasReacciones[GlobalId].dislikePressed = false;
-      dislikeCount = await updateCounter('dislike', dislikeCount - 1);
-    }
-  }
+        } else if (obrasReacciones[GlobalId].dislikePressed && !obrasReacciones[GlobalId].likePressed) {
+          obrasReacciones[GlobalId].dislikePressed = false;
+          dislikeCount = await updateCounter('dislike', dislikeCount - 1);
+        }
+      }
 
     document.getElementById('dislikeCount').innerText = dislikeCount;
-
+  } else {
+    document.getElementById('likeCount').innerText = "";
+    document.getElementById('dislikeCount').innerText = "";
+  }
 }
 
 async function updateCounter(type, count) {
