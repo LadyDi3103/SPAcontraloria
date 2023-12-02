@@ -19,8 +19,6 @@ async function fetchData() {
       obrasReacciones[GlobalId] = {likePressed: false, dislikePressed: false}
     }
 
-    console.log(obrasReacciones[GlobalId] === undefined)
-
   } catch (error) {
     console.error('Error fetching data:', error);
     // Agregar más información sobre el error
