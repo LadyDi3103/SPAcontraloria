@@ -1,9 +1,27 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elems = document.querySelectorAll('.sidenav');
+    let instance = M.Sidenav.getInstance(elems);
+    instance = M.Sidenav.init(elems);
+
+    const elemCarousel = document.querySelectorAll('.carousel');
+
+    let instanceCarousel = M.Carousel.getInstance(elemCarousel);
+     instanceCarousel = M.Carousel.init(elemCarousel, {
+        fullWidth: true,
+        indicators: true
+      });
+     
+} );
+
+
 let likeCount = 0;
 let dislikeCount = 0;
 let GlobalId = 0;
 
 async function fetchData() {
     try {
+        // const apiKey = process.env.nombre/ siempre y encuando lo haya guardado en mi windows local
         const response = await fetch('https://books-tsfn.onrender.com/Obras/' + GlobalId);
         const data = await response.json();
 
