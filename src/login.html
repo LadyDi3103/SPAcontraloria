@@ -5,15 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucha contra la corrupción</title>
-    <link rel="stylesheet" href="./login.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="./assets/img/favicon.jpg" />
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"></script> -->
 </head>
 
 <body>
-    <div id="root">
+    <!-- CABECERA -->
+
+    <header>
+        <nav>
+          <div class="nav-wrapper ">
+            <img class="logo hide-on-small-only" src=".//assets/img/logoGrandeSinFondo-removebg-preview.png"
+              alt="logoGrandeSinFondo-removebg-preview">
+            <p class="brand-logo flow-text">Transparencia Perú</p>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="index.html">Inicio</a></li>
+              <!-- <li><a href="#">Prevención</a></li> -->
+              <li><a href="indexPeople.html">Geo-Colaborador</a></li>
+              <li><a href="login.html">Sesión Monitor</a></li>
+            </ul>
+          </div>
+        </nav>
+    
+        <ul class="sidenav flow-text" id="mobile-demo">
+          <li><a href="index.html">Inicio</a></li>
+          <!-- <li><a href="#">Prevención</a></li> -->
+          <li><a href="indexPeople.html">Geo-Colaborador</a></li>
+          <li><a href="login.html">Sesión Monitor</a></li>
+        </ul>
+    
+      </header>
 
         <!-- MODAL DE INICIO DE SESIÓN DEL LOGIN DEL MONITOR -->
         <section id="container__login" >
@@ -39,7 +63,13 @@
 
 
 
-    </div>
+        <footer class="page-footer page__footer">
+            <div class="footer-copyright">
+              <div class="container flow-text">
+                © 2023 Copyright "Gestores de la Innovación"
+              </div>
+            </div>
+          </footer>
     <script type="module" src="login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
