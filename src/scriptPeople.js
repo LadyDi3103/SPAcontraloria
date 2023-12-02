@@ -2,9 +2,7 @@ let likeCount = 0;
 let dislikeCount = 0;
 let GlobalId = 0;
 
-// Variables to track button states
-let likePressed = false;
-let dislikePressed = false;
+let obrasReacciones ={}
 
 async function fetchData() {
   try {
@@ -17,6 +15,12 @@ async function fetchData() {
     document.getElementById('likeCount').innerText = likeCount;
     document.getElementById('dislikeCount').innerText = dislikeCount;
 
+    if(!obrasReacciones.hasOwnProperty(GlobalId)){
+      obrasReacciones[GlobalId] = {likePressed: false, dislikePressed: false}
+    }
+
+    console.log(obrasReacciones[GlobalId] === undefined)
+
   } catch (error) {
     console.error('Error fetching data:', error);
     // Agregar más información sobre el error
@@ -28,21 +32,24 @@ async function handleInteraction(interactionType) {
   await fetchData();
 
   if (interactionType === 'like') {
-    if (!likePressed && !dislikePressed) {
-      likePressed = true;
+    if (!obrasReacciones[GlobalId].likePressed && !obrasReacciones[GlobalId].dislikePressed) {
+      obrasReacciones[GlobalId].likePressed = true;
       likeCount = await updateCounter('like', likeCount + 1);
-    } else if (likePressed && !dislikePressed){
-      likePressed = false;
+    } else if (obrasReacciones[GlobalId].likePressed && !obrasReacciones[GlobalId].dislikePressed){
+      obrasReacciones[GlobalId].likePressed = false;
       likeCount = await updateCounter('like', likeCount - 1);
     }
     document.getElementById('likeCount').innerText = likeCount;
+
   } else if (interactionType === 'dislike') {
-    if (!dislikePressed && !likePressed) {
-      dislikePressed = true;
+    if (!obrasReacciones[GlobalId].dislikePressed && !obrasReacciones[GlobalId].likePressed) {
+      obrasReacciones[GlobalId].dislikePressed = true;
       dislikeCount = await updateCounter('dislike', dislikeCount + 1);
-    } else if (dislikePressed && !likePressed) {
-      dislikePressed = false;
+
+    } else if (obrasReacciones[GlobalId].dislikePressed && !obrasReacciones[GlobalId].likePressed) {
+      obrasReacciones[GlobalId].dislikePressed = false;
       dislikeCount = await updateCounter('dislike', dislikeCount - 1);
+
     }
     document.getElementById('dislikeCount').innerText = dislikeCount;
   }
