@@ -200,10 +200,6 @@ button:hover {
   color: white;
 }
 
-footer {
-  text-align: center;
-}
-
 /* /-----MEDIA QUERIES----/ */
 @media (min-width: 992px) {
   .grid {
@@ -321,7 +317,7 @@ footer {
   background-color: #0F2A44;
   color: white;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 14px;
 }
 
 /* container news */
@@ -333,7 +329,7 @@ footer {
 .title-news{
 padding-bottom: 20px;
 text-align: center;
-color: white;
+color: black;
 }
 
 .container-numbers-emergency {

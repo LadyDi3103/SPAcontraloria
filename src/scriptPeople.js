@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const elems = document.querySelectorAll('.sidenav');
+  const instances = M.Sidenav.init(elems);
+
+});
+
 let likeCount = 0;
 let dislikeCount = 0;
 let GlobalId = 0;
