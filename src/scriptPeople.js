@@ -42,7 +42,6 @@ async function handleInteraction(interactionType) {
       dislikeCount = await updateCounter('dislike', dislikeCount + 1);
     } else if (dislikePressed && !likePressed) {
       dislikePressed = false;
-      likePressed = false;
       dislikeCount = await updateCounter('dislike', dislikeCount - 1);
     }
     document.getElementById('dislikeCount').innerText = dislikeCount;
