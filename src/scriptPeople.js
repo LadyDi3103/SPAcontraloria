@@ -47,10 +47,11 @@ async function handleInteraction(interactionType) {
     } else if (obrasReacciones[GlobalId].dislikePressed && !obrasReacciones[GlobalId].likePressed) {
       obrasReacciones[GlobalId].dislikePressed = false;
       dislikeCount = await updateCounter('dislike', dislikeCount - 1);
-
     }
-    document.getElementById('dislikeCount').innerText = dislikeCount;
   }
+
+    document.getElementById('dislikeCount').innerText = dislikeCount;
+
 }
 
 async function updateCounter(type, count) {
@@ -64,8 +65,6 @@ async function updateCounter(type, count) {
         [type + '_total']: count
       })
     });
-
-    const updateData = await updateResponse.json();
 
     return count;
 
