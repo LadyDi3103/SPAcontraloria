@@ -93,7 +93,7 @@ let obrasInfo = [];
 let puentesInfo = [];
 
 const conseguirObras = () => {
-  return fetch('https://www.datos.gov.co/resource/g373-n3yy.json')
+  return fetch('https://books-tsfn.onrender.com/Peligros')
     .then(response => response.json())
     .then(obras => {
       //console.log(obras);
@@ -101,7 +101,9 @@ const conseguirObras = () => {
       obras.forEach(obra => {
         let obraInfo = {
           posicion: { lat: obra.punto.coordinates[1], lng: obra.punto.coordinates[0] },
-          nombre: obra.nombre_sede,
+          nombre: obra.TipoPeligroFEN,
+          FechaDeReporte: obra.Fecha_Reporte,
+          Clasificacion: obra.Clasificacion
 
         };
 
@@ -188,7 +190,7 @@ const crearMapaYUbicar = (obj) => {
       marker.addListener('click', () => {
         // Show a popup with the message when the marker is clicked
         const infoWindow = new google.maps.InfoWindow({
-          content: obra.nombre
+          content: `Tipo de Peligro: ${obra.nombre}<br>Fecha de Reporte: ${obra.FechaDeReporte}<br>Riesgo: ${obra.Clasificacion}`
         });
         infoWindow.open(mapa, marker);
       });
