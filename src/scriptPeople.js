@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let dislikeCount = 0;
   let ObraId = 0;
   
+  const obrasApi = 'https://books-tsfn.onrender.com/Obras/'
+
   let obrasReacciones ={}
   
-  async function fetchData() {
+  async function fetchData(url, id) {
     try {
-      const response = await fetch('https://books-tsfn.onrender.com/Obras/' + ObraId);
+      const response = await fetch(url + id);
       const data = await response.json();
   
       likeCount = data.like_total;
@@ -37,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   async function handleInteraction(interactionType) {
     if (ObraId !== 0){
-        await fetchData();
+        await fetchData(obrasApi ,ObraId);
   
         if (interactionType === 'like') {
           if (!obrasReacciones[ObraId].likePressed && !obrasReacciones[ObraId].dislikePressed) {
@@ -215,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
           ObraId = puente.currentId
   
-          fetchData();
+          fetchData(obrasApi, ObraId);
           infoWindow.open(mapa, marker);
         });
   
