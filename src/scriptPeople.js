@@ -156,7 +156,7 @@ const miUbicacion = () => {
 
 const crearMapaYUbicar = (obj) => {
   const icon1 = {
-    url: "./assets/img/icono_negro.png",
+    url: "./assets/img/peligro.png",
     scaledSize: new google.maps.Size(30, 30)
   };
 
