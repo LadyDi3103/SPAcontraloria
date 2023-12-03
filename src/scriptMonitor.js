@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const elemsModal = document.querySelectorAll('.modal');
+  let instancesModal = M.Modal.init(elemsModal);
+
+});
+
+
+
+
+
+
 let likeCount = 0;
 let dislikeCount = 0;
 let GlobalId = 0;
