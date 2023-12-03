@@ -11,6 +11,8 @@ let likeCount = 0;
 let dislikeCount = 0;
 let GlobalId = 0;
 
+let obrasReacciones ={}
+
 async function fetchData() {
   try {
     const response = await fetch('https://books-tsfn.onrender.com/Obras/' + GlobalId);
@@ -22,6 +24,10 @@ async function fetchData() {
     document.getElementById('likeCount').innerText = likeCount;
     document.getElementById('dislikeCount').innerText = dislikeCount;
 
+    if(!obrasReacciones.hasOwnProperty(GlobalId)){
+      obrasReacciones[GlobalId] = {likePressed: false, dislikePressed: false}
+    }
+
   } catch (error) {
     console.error('Error fetching data:', error);
     // Agregar más información sobre el error
@@ -30,14 +36,34 @@ async function fetchData() {
 }
 
 async function handleInteraction(interactionType) {
-  await fetchData();
+  if (GlobalId !== 0){
+      await fetchData();
 
-  if (interactionType === 'like') {
-    likeCount = await updateCounter('like', likeCount);
-    document.getElementById('likeCount').innerText = likeCount;
-  } else if (interactionType === 'dislike') {
-    dislikeCount = await updateCounter('dislike', dislikeCount);
+      if (interactionType === 'like') {
+        if (!obrasReacciones[GlobalId].likePressed && !obrasReacciones[GlobalId].dislikePressed) {
+          obrasReacciones[GlobalId].likePressed = true;
+          likeCount = await updateCounter('like', likeCount + 1);
+        } else if (obrasReacciones[GlobalId].likePressed && !obrasReacciones[GlobalId].dislikePressed){
+          obrasReacciones[GlobalId].likePressed = false;
+          likeCount = await updateCounter('like', likeCount - 1);
+        }
+        document.getElementById('likeCount').innerText = likeCount;
+
+      } else if (interactionType === 'dislike') {
+        if (!obrasReacciones[GlobalId].dislikePressed && !obrasReacciones[GlobalId].likePressed) {
+          obrasReacciones[GlobalId].dislikePressed = true;
+          dislikeCount = await updateCounter('dislike', dislikeCount + 1);
+
+        } else if (obrasReacciones[GlobalId].dislikePressed && !obrasReacciones[GlobalId].likePressed) {
+          obrasReacciones[GlobalId].dislikePressed = false;
+          dislikeCount = await updateCounter('dislike', dislikeCount - 1);
+        }
+      }
+
     document.getElementById('dislikeCount').innerText = dislikeCount;
+  } else {
+    document.getElementById('likeCount').innerText = "";
+    document.getElementById('dislikeCount').innerText = "";
   }
 }
 
@@ -49,19 +75,18 @@ async function updateCounter(type, count) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        [type + '_total']: count + 1
+        [type + '_total']: count
       })
     });
 
-    const updateData = await updateResponse.json();
-
-    return count + 1;
+    return count;
 
   } catch (error) {
     console.error('Error updating data:', error);
     return count;
   }
 }
+
 
 
 let obrasInfo = [];
