@@ -1,113 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de visita de obra</title>
-    <link rel="stylesheet" href="styleMonitor.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reporte de visita de obra</title>
+  <link rel="stylesheet" href="formulario.css" />
 </head>
-
 <body>
-    <header>
-        <div class="header-content">
-            <h1>REPORTE DE VISITA DE OBRA DEL MONITOR CIUDADANO DE CONTROL</h1>
-        </div>
-    </header>
-    <div class="form-container">
-        <form id="myForm">
-            <div class="form-group">
-                <label for="visitDate">Fecha de la visita:</label>
-                <input type="text" id="visitDate" name="visitDate" required>
-            </div>
-
-            <div class="form-group">
-                <label for="visitHour">HORA:</label>
-                <input type="text" id="visitHour" name="visitHour" required>
-            </div>
-
-            <div class="form-group">
-                <label for="executingEntity">ENTIDAD EJECUTORA:</label>
-                <input type="text" id="executingEntity" name="executingEntity" required>
-            </div>
-
-            <div class="form-group">
-                <label for="workName">NOMBRE DE LA OBRA:</label>
-                <input type="text" id="workName" name="workName" required>
-            </div>
-
-            <div class="form-group">
-                <label for="executionMode">MODALIDAD DE EJECUCION DE OBRA:</label>
-                <input type="text" id="executionMode" name="executionMode" required>
-            </div>
-
-            <div class="form-group">
-                <label for="uniqueCode">CODIGO UNICO DE LA OBRA (CUI):</label>
-                <input type="text" id="uniqueCode" name="uniqueCode" required>
-            </div>
-
-            <h2>Responda las siguientes preguntas, tome una foto que sustente esta respuesta:</h2>
-            <div class="mi-cuadro">
-                <div class="question-box">
-                    <div class="yes-no-options">
-                        <div class="question">
-                            <label for="contract">¿Tiene contrato de ejecución de obra?</label>
-                        </div>
-                        <br>
-                        <div class="answers">
-                            <input type="radio" name="contract" value="yes"> Sí
-                            <input type="radio" name="contract" value="no"> No
-                            <input type="file" id="contractPicture" name="contractPicture">
-                            <label for="contractObservations">Observaciones:</label>
-                            <textarea id="contractObservations" name="contractObservations" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div class="yes-no-options">
-                        <div class="question">
-                            <label for="approvedTechnicalFile">¿La obra se ejecuta con el expediente técnico aprobado?, verifique que el expediente técnico contenga los sellos y firmas, del proyectista y funcionarios de la Entidad.</label>
-                        </div>
-                        <br>
-                        <div class="answers">
-                            <input type="radio" name="approvedTechnicalFile" value="yes"> Sí
-                            <input type="radio" name="approvedTechnicalFile" value="no"> No
-                            <input type="file" id="approvedTechnicalFilePicture" name="approvedTechnicalFilePicture">
-                            <label for="approvedTechnicalFileObservations">Observaciones:</label>
-                            <textarea id="approvedTechnicalFileObservations" name="approvedTechnicalFileObservations" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div class="yes-no-options">
-                        <div class="question">
-                            <label for="contractStartDate">Se encuentra señalado en el cuaderno de obra, el "inicio del plazo contractual? si la respuesta es "SI", adjunte foto del asiento de obra.</label>
-                        </div>
-                        <br>
-                        <div class="answers">
-                            <input type="radio" name="contractStartDate" value="yes"> Sí
-                            <input type="radio" name="contractStartDate" value="no"> No
-                            <input type="file" id="contractStartDatePicture" name="contractStartDatePicture">
-                            <label for="contractStartDateObservations">Observaciones:</label>
-                            <textarea id="contractStartDateObservations" name="contractStartDateObservations" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <h2>¿Cual es el estado de la obra?</h2>
-            <select id="workStatus" name="workStatus">
-                <option value="execution">En ejecución</option>
-                <option value="paused">Paralizada</option>
-                <option value="completed">Ejecutada</option>
-            </select>
-
-            <div class="form-group">
-                <label for="comments">Deja un comentario adicional si es que así lo deseas:</label>
-                <textarea id="comments" name="comments" rows="4"></textarea>
-            </div>
-
-            <input type="submit" value="Submit">
-        </form>
+  <header>
+    <div class="header-content">
+      <h1>REPORTE DE VISITA DE OBRA DEL MONITOR CIUDADANO DE CONTROL</h1>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <div class="form-container">
+    <form id="myForm">
+      <div class="form-group">
+        <label for="visitDate">Fecha de la visita:</label>
+        <input type="text" id="visitDate" name="visitDate" required />
+      </div>
+
+      <div class="form-group">
+        <label for="visitHour">Hora:</label>
+        <input type="text" id="visitHour" name="visitHour" required />
+      </div>
+
+      <div class="form-group">
+        <label for="executingEntity">Entidad Ejecutora:</label>
+        <input
+          type="text"
+          id="executingEntity"
+          name="executingEntity"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="workName">Nombre de la obra:</label>
+        <input type="text" id="workName" name="workName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="executionMode">Modalidad de Ejecución de Obra:</label>
+        <input type="text" id="executionMode" name="executionMode" required />
+      </div>
+
+      <div class="form-group">
+        <label for="uniqueCode">Codigo Unico de la Obra(CUI):</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Nombre del residente de la Obra:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Nombre del supervisor de Obra/Inspector:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Nombre del Contratista:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Monto de la Obra:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Plazo de Ejecución:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode"
+          >Fecha de inicio de la Obra según cuaderno de Obra:</label
+        >
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Fecha de termino de la Obra según cuaderno de Obra:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Nomneclatura del proceso de selección:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Sistema de Contratación:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Código del MCC01:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+      <div class="form-group">
+        <label for="uniqueCode">Código del MCC02:</label>
+        <input type="text" id="uniqueCode" name="uniqueCode" required />
+      </div>
+
+      <h2>Responda las siguientes preguntas, tome una foto que sustente esta respuesta:</h2>
+      <div class="question-section">
+        <div class="question-box">
+          <table class="excel-table">
+            <thead>
+              <tr>
+                  <th>Ítem</th>
+                  <th>Pregunta</th>
+                  <th>Si</th>
+                  <th>No</th>
+                  <th>Observaciones</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr> 
+                  <th contenteditable="false">P1</th>         
+                  <th contenteditable="false">¿Tiene contrato de ejecución de obra?</th>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+              </tr>
+              <tr>
+                  <th contenteditable="false">P2</th>  
+                  <th contenteditable="false">¿La obra se ejecuta con el expediente técnico aprobado?, verifique que el expediente técnico contenga los sellos y firmas, del proyectista y funcionarios de la Entidad.</th>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+              </tr>
+              <tr>
+                  <th contenteditable="false">P3</th>  
+                  <th contenteditable="false">Se encuentra señalado en el cuaderno de obra, el "inicio del plazo contractual? si la respuesta es "SI", adjunte foto del asiento de obra.</th>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+              </tr>
+              <tr>
+                  <th contenteditable="false">P4</th>  
+                  <th contenteditable="false">¿El Supervisor estuvo presente el día de la visita a la obra?</th>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+              </tr>
+              <tr>
+                  <th contenteditable="false">P5</th>  
+                  <th contenteditable="false">Solicite el DNI del residente de obra, ¿debiendo verificar que los datos del Residente de obra , coincidan con lo señalado en el contrato de ejecucion de obra.? tome una fotografía al DNI.</th>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>
+              </tr>
+              </tr>
+              <tr>
+                  <th contenteditable="false">P6</th>  
+                  <th contenteditable="false">¿La obra cuenta con cartel de obra? Tome una foto al cartel o carteles de obra y al presupuesto de obra donde figure la partida cartel de obra.</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P7</th>  
+                  <th contenteditable="false">¿La obra cuenta con caseta/oficina del  supervisor?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P8</th>  
+                  <th contenteditable="false">¿La obra cuenta con caseta/oficina del contratista?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P9</th>  
+                  <th contenteditable="false">¿La obra cuenta con servicios higienicos?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P10</th>  
+                  <th contenteditable="false">¿Existe en la obra señalización de seguridad?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P11</th>  
+                  <th contenteditable="false">¿Los trabajadores estan utilizando calzado de seguridad? Botas punta de acero o botas de jebe.</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P12</th>  
+                  <th contenteditable="false">¿Los trabajadores estan utilizando casco de seguridad?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P13</th>  
+                  <th contenteditable="false">¿La obra se ejecuta sin ocasionar daños a terceros o  propiedades vecinas?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P14</th>  
+                  <th contenteditable="false">¿El almacenamiento de materiales estan zonificados con señalizacion?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P15</th>  
+                  <th contenteditable="false">El terreno donde se ejecuta la obra, cuenta con saneamiento fisico legal del terreno y esta libre de disponibilidad?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P16</th>  
+                  <th contenteditable="false">¿Tuvieron algun problema en el trazo o diseño geométrico en obra?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+                  <th contenteditable="false">P17</th>  
+                  <th contenteditable="false">¿Hay problemas por existencia de restos arqueológicos pendientes de solución en la obra?</th>  
+                  <td contenteditable="true" ></td>
+                  <td contenteditable="true"></td>
+                  <td contenteditable="true"></td>              
+              </tr>
+              <tr>
+          </tbody>
+          </table>
+          <br>
+          <input type="file" id="contractPicture" name="contractPicture" />
+          <br>
+          <br>
+
+          <h3>ADICIONALES, deductivos y ampliaciones de plazo de Obra (Aprobados) - Tome una foto que sustente esta respuesta</h3>
+          <div class="question-box">
+            <table class="excel-table">
+              <thead>
+                <tr>
+                    <th>Ítem</th>
+                    <th>Pregunta</th>
+                    <th>Si</th>
+                    <th>No</th>
+                    <th>No se pudo verificar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr> 
+                    <th contenteditable="false">P18</th>         
+                    <th contenteditable="false">La obra, cuenta con Adicional o Adicionales de Obra (Aprobados) (Tome una foto de la Resolucion de la Entidad del adicional respectivo)</th>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr> 
+                    <th contenteditable="false">P19</th>         
+                    <th contenteditable="false">La obra, cuenta con Deductivo o Deductivos de Obra (Aprobados) (Tome una foto de la Resolucion de la Entidad del deductivo respectivo)</th>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr> 
+                    <th contenteditable="false">P20</th>         
+                    <th contenteditable="false">La obra, cuenta con Ampliacion o Ampliaciones de Plazo? (Aprobados)  (Tome una foto de la Resolucion de la Entidad de la ampliacion de plazo respectivo)</th>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                </tbody>           
+               </table>
+            <br>
+            <input type="file" id="contractPicture" name="contractPicture" />
+
+            <h4>ADICIONALES (En trámite)</h4>
+            <div class="question-box">
+              <table class="excel-table">
+                <thead>
+                  <tr>
+                      <th>Ítem</th>
+                      <th>Pregunta</th>
+                      <th>Si</th>
+                      <th>No</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr> 
+                      <th contenteditable="false">P21</th>         
+                      <th contenteditable="false">A la fecha se estan ejecutando Adicionales y que aun no han sido aprobados. </th>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                  </tr>
+                  <tr>
+                  </tbody>              
+                </table>
+              <br>
+              <input type="file" id="contractPicture" name="contractPicture" />
+
+              <h5>GARANTÍAS (Solicite el Archivo de la Obra y pregunte al Residente de la Obra, Supervisor y/o Inspector de Obra)</h5>
+              <div class="question-box">
+                <table class="excel-table">
+                  <thead>
+                    <tr>
+                        <th>Ítem</th>
+                        <th>Pregunta</th>
+                        <th>Si</th>
+                        <th>No</th>
+                        <th>No se puede verificar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr> 
+                        <th contenteditable="false">P22</th>         
+                        <th contenteditable="false">Cuenta con la copia de la GARANTIA DE FIEL CUMPLIMIENTO (Carta Fianza) vigente?. Tome una foto a la carta fianza.</th>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr> 
+                        <th contenteditable="false">P23</th>         
+                        <th contenteditable="false">Cuenta con la copia de la GARANTIA DEL ADELANTO DIRECTO (Carta Fianza)  vigente?. Tome una foto a la carta fianza.</th>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr> 
+                        <th contenteditable="false">P23</th>         
+                        <th contenteditable="false">Cuenta con la copia de la GARANTIA DEL ADELANTO DE MATERIALES (carta fianza) vigente?. Tome una foto a la carta fianza.</th>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                    </tbody>                </table>
+                <br>
+                <input type="file" id="contractPicture" name="contractPicture" />
+
+                <h6>Infraestructura y Equipamiento:</h6>
+                <div class="checkbox-container">
+                  <label for="checkbox1">Educativo</label>
+                  <input type="checkbox" id="checkbox1" name="checkboxes" value="opcion1">
+                  <label for="checkbox2">Comercio</label>
+                  <input type="checkbox" id="checkbox2" name="checkboxes" value="opcion2">
+                  <label for="checkbox3">Turismo</label>
+                  <input type="checkbox" id="checkbox3" name="checkboxes" value="opcion3">
+                  <label for="checkbox1">Educativo</label>
+                  <input type="checkbox" id="checkbox1" name="checkboxes" value="opcion4">
+                  <label for="checkbox2">De salud</label>
+                  <input type="checkbox" id="checkbox2" name="checkboxes" value="opcion5">
+                  <label for="checkbox3">Ambiental</label>
+                  <input type="checkbox" id="checkbox3" name="checkboxes" value="opcion6">
+                  <label for="checkbox3">Agropecuaria</label>
+                  <input type="checkbox" id="checkbox3" name="checkboxes" value="opcion7">
+                  <label for="checkbox1">Energia</label>
+                  <input type="checkbox" id="checkbox1" name="checkboxes" value="opcion8">
+                  <label for="checkbox2">Cultural y deportivo</label>
+                  <input type="checkbox" id="checkbox2" name="checkboxes" value="opcion9">
+                  <label for="checkbox3">De vivienda y desarrollo</label>
+                  <input type="checkbox" id="checkbox3" name="checkboxes" value="opcion10">
+                  <label for="checkbox3">Obras de Protección Social</label>
+                  <input type="checkbox" id="checkbox3" name="checkboxes" value="opcion3">
+              </div>
+                <br>
+                <br>
+
+                <h7>PERSONAL CLAVE: Si la obra se ejecuta por contrata, indique el personal clave que estuvo presente durante la visita a la obra:</h7>
+                <div class="question-box">
+                  <table class="excel-table">
+                    <thead>
+                      <tr>
+                          <th>N°</th>
+                          <th>Nombre</th>
+                          <th>Cargo</th>
+                          <th>DNI</th>
+                          <th>Firma</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr> 
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                      </tr>
+                      <tr> 
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                      </tr>
+                      <tr> 
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                      </tr>
+                      <tr> 
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                      </tr>
+                      <tr> 
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                      </tr>
+                      <tr> 
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                      </tr>
+                      <tr> 
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                      </tr>
+                      <tr>
+                      </tbody>
+                      </table>
+                  <br>
+
+                  <!-- Comentarios adicionales -->
+                  <div class="form-group">
+                    <label for="comments">Deja un comentario adicional si es que así lo deseas:</label>
+                    <textarea id="comments" name="comments" rows="6"></textarea>
+                  </div>
+
+                  <h7>IMPORTANTE: Los monitores ciudadanos de control se encuentran comprometidos a no revelar ni difundir información a la que tienen acceso, hasta que la misma no haya sido previamente publicada por la Contraloría. Asimismo, la información obtenida no puede usarse con fines económicos, políticos, partidarios o electorales, ni para fines o intereses personales, de terceros o de cualquier otra naturaleza.</h7>
+                  <br>
+                  <br>
+
+                  <form id="myForm">
+                    <div class="form-group">
+                      <label for="visitDate">Hora termino de visita:</label>
+                      <input type="text" id="visitDate" name="visitDate" required />
+                    </div>
+
+                    <!-- Botón de envío -->
+                    <input type="submit" value="Guardar y Enviar" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>

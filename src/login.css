@@ -1,34 +1,77 @@
 
-#container__login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Ajusta la altura al 100% de la vista */
-  }
-  
-  .container__login__monitor {
-    width: 300px; /* O ajusta según tus necesidades */
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    text-align: center; 
+/* ------------- Form ---------- */
+
+.centered_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-  
-  #form-login {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 5px;
-  }
-  
-  .btn {
-    padding: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .input-error {
-    color: red;
-    margin-top: 5px;
-  }
+
+.container_login_monitor {
+  width: 100%;
+}
+
+.subtitle-form {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 26px;
+  color: #0f0f0f;
+}
+#form {
+  box-shadow: 0 0 2px grey;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 35px;
+  max-width: 400px;
+  margin:0 auto;
+}
+
+.box_inp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  text-align: start;
+}
+
+.label_form-login {
+  text-align: left;
+  color: rgb(64, 64, 64);
+}
+.label_form-password {
+  color: rgb(64, 64, 64);
+}
+
+.input_login {
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.073);
+  outline: none;
+}
+
+#button-login {
+  padding: 7px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #0f0f0f;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.input-error {
+  color: rgb(229, 43, 43);
+  font-size: 12px;
+}
+.img-person{
+  display: flex;
+
+}

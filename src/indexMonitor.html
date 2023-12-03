@@ -41,27 +41,14 @@
         </div>
 
         <div class="main-content">
-            <h3>Querido Monitor, te ofrecemos una nueva vía para que ingreses tus reportes, permitiéndote llevar a cabo
-                el control social en obras públicas de manera más rápida y eficiente. Estamos aquí para facilitar tu
-                labor y brindarte todo el apoyo necesario. ¡Gracias por tu compromiso y dedicación!</h3>
-            <section id="map"></section>
-            <div id="comments-container"></div>
-        </div>
-
-        <div class="main-content">
-            <h3>Querido Ciudadano, te damos la bienvenida a este espacio exclusivamente para ti. Aquí podras verificar
-                el progreso de obras o identificar zonas de riesgo relacionadas con el Fenómeno del Niño Costero.
-                Exprésate con 'Me gusta' o 'No me gusta', comparte tus comentarios y envíanos evidencia de obras
-                abandonadas o zonas de riesgo sin atención. Explora los detalles de las obras con un simple clic. Tu
-                participación es esencial para prevenir la corrupción, y qué mejor manera que con tu opinión y tus
-                evidencias. Agradecemos sinceramente tu valiosa contribución.</h3>
+                    
+            <h3 style="font-size: 18px;">QUERIDO MONITOR, te ofrecemos una nueva vía para que ingreses tus reportes, permitiéndote llevar a cabo el control social en obras públicas de manera más rápida y eficiente. Estamos aquí para facilitar tu labor y brindarte todo el apoyo necesario.</h3>
+            <h4 style="font-size: 18px;">¡Gracias por tu compromiso y dedicación!</h4>
             <section id="map"></section>
             <div id="comments-container">
 
             </div>
         </div>
-
-
 
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
@@ -74,30 +61,26 @@
                 </div>
             </div>
 
-            <div id="likeButton" data-target="modal1" class="button btn modal-trigger flow-text"
+            <!-- <div id="likeButton" data-target="modal1" class="button btn modal-trigger flow-text"
                 onclick="handleInteraction('like')">👍 Like</div>
             <span id="likeCount" class="count">0</span>
 
             <div id="dislikeButton"  data-target="modal1" class="button  btn modal-trigger flow-text" onclick="handleInteraction('dislike')">👎 Dislike</div>
             <span id="dislikeCount" class="count">0</span>
-        </div>
-
-
-        <a href="formulario.html">Clic aquí para registrar tus reportes de visita a las obras</a>
-    </div>
-
-    <footer class="page-footer page__footer">
-        <div class="footer-copyright">
-            <div class="container flow-text">
-                © 2023 Copyright "Gestores de la Innovación"
-            </div>
-        </div>
-    </footer>
-    
+        </div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="scriptMonitor.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8"></script>
+    <div class="container-likes">
+        <div id="likeButton" class="button" onclick="handleInteraction('like')">👍 Like</div>
+        <span id="likeCount" class="count"></span>
+        <div id="dislikeButton" class="button" onclick="handleInteraction('dislike')">👎 Dislike</div>
+        <span id="dislikeCount" class="count"></span>
+    </div>
+    <a href="formulario.html">"Registra tus visitas a las obras aquí."</a>
+
+
 </body>
 
 </html>

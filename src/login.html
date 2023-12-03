@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./styles.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="./assets/img/favicon.jpg" />
+    <link rel="stylesheet" href="./login.css" />
+
 </head>
 
 <body>
@@ -40,27 +42,38 @@
       </header>
 
         <!-- MODAL DE INICIO DE SESIÓN DEL LOGIN DEL MONITOR -->
-        <section id="container__login" >
-            <div class="container__login__monitor">
-                <form action="" id="form-login">
-                    <label for="mail">EMAIL</label>
-                    <input class="btn" type="email" id="mail" name="user_mail" title="El email es incorrecto"
-                        placeholder="ejemplo@ejemplo.com" autocomplete="username" required />
-                    <p id="errorEmail" class="input-error">*Ingresa un email válido.</p>
-                    <label for="password">CONTRASEÑA</label>
-                    <div class="icon-login">
-                        <span class="icon-eye" id="icon-password">
-                            <i class="fa-regular fa-eye-slash"></i>
-                        </span>
-                        <input class="btn" type="password" id="password" name="user_password" placeholder="**********"
-                            autocomplete="current-password" required />
-                    </div>
-                    <p id="errorPassword" class="input-error">*Contraseña [5-10] caracteres.</p>
-                    <button id="button-login" type="button">Iniciar Sesión</button>
-                </form>
-            </div>
-        </section>
 
+        <section class="centered_container">
+          <div class="container_login_monitor">
+              <form action="" id="form">
+                  <h2 class="subtitle-form">Cuenta de Ingreso</h2>
+                  <div class="box_inp">
+                      <label class="label_form-login" for="mail">EMAIL</label>
+                      <input class="input_login" type="email" id="mail" name="user_mail"
+                          title="El email es incorrecto" placeholder="Ejemplo@ejemplo.com" autocomplete="username"
+                          required />
+  
+                  </div>
+                  <p class="input-error" id="errorEmail">
+                      *Ingresa un email válido.
+                  </p>
+                  <div class="box__inp">
+                      <label class="label_form-password"for="password">CONTRASEÑA</label>
+                      <input class="input_login" type="password" id="password" name="user_password"
+                          placeholder="****" autocomplete="current-password" required />
+                  </div>
+                  <p class="input-error" id="errorPassword">
+                      *Contraseña de 5 a 10 caracteres.
+                  </p>
+                  <button id="button-login" type="button">
+                      Iniciar Sesión
+                  </button>
+
+
+              </form>
+          </div>
+      </section>
+  </div>
 
 
         <footer class="page-footer page__footer">
@@ -77,8 +90,6 @@
  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8">
  </script>
     
-
-
 </body>
 
 </html>

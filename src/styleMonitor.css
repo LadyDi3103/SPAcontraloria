@@ -3,10 +3,12 @@ html, head {
   padding: 0;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+.containerheader {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 5px;
+  gap: 5px;
 }
 
 header {
@@ -56,24 +58,26 @@ select {
   margin-top: 10px;
 }
 
-button {
+.button {
   padding: 10px;
-  background-color: #333;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #555;
+/* Estilos para el botón cuando se le ha dado 'like' */
+#likeButton {
+  background-color: #4CAF50; /* Verde cuando se ha dado like */
 }
 
-.yes-no-options {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 10px;
+/* Estilos para el botón cuando se le ha dado 'dislike' */
+.dislikeButton {
+  background-color: #CA0000; /* Rojo cuando se ha dado dislike */
+}
+
+button:hover {
+  background-color: #555;
 }
 
 .question {
@@ -107,12 +111,53 @@ button:hover {
 
 .count {
   font-size: 18px;
-  margin: 0 10px;
+  margin: 9px 10px;
+}
+
+.container-likes {
+  width: 100%;
+  color: black;
+  border-radius: 5px;
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* Estilos para el enlace */
+a {
+  color: #CA0000;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Cambia el color cuando el enlace está en estado hover (ratón encima) */
+a:hover {
+  color: #0056b3;
+}
+
+/* Cambia el color cuando el enlace está en estado activo (haciendo clic) */
+a:active {
+  color: #003366;
+}
+
+/* Cambia el color cuando el enlace ha sido visitado */
+a:visited {
+  color: #6600cc;
+}
+
+.img-person{
+  display: flex;
+
 }
 
 /* Agregado para hacer más responsivo */
 @media only screen and (max-width: 600px) {
   .form-container {
-      max-width: 100%;
+    max-width: 100%;
   }
 }
