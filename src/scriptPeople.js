@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const elems = document.querySelectorAll('.sidenav');
   const instances = M.Sidenav.init(elems);
 
+  const elemsModal = document.querySelectorAll('.modal');
+  let instancesModal = M.Modal.init(elemsModal);
+
 });
 
 let likeCount = 0;

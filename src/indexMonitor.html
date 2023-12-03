@@ -1,42 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="stylesheet" href="styleMonitor.css">
-    <title>Maps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparencia Perú - Maps</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="./assets/img/favicon.jpg" />
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <h1>¡Bienvenido(a) al Geocolaborador!</h1>
-                <h2>¡Tu participación es esencial para crear un entorno más seguro y transparente! </h2>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <img class="logo hide-on-small-only" src="./assets/img/logoGrandeSinFondo-removebg-preview.png"
+                    alt="logoGrandeSinFondo-removebg-preview">
+                <p class="brand-logo flow-text">Transparencia Perú</p>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="indexPeople.html">Geo-Colaborador</a></li>
+                    <li><a href="login.html">Sesión Monitor</a></li>
+                </ul>
             </div>
-        </header>
+        </nav>
+
+        <ul class="sidenav flow-text" id="mobile-demo">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="indexPeople.html">Geo-Colaborador</a></li>
+            <li><a href="login.html">Sesión Monitor</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="header-content">
+            <h1>¡Bienvenido(a) al Geocolaborador!</h1>
+            <h2>¡Tu participación es esencial para crear un entorno más seguro y transparente! </h2>
+        </div>
+
         <div class="main-content">
-            <h3>Querido Monitor, te ofrecemos una nueva vía para que ingreses tus reportes, permitiéndote llevar a cabo el control social en obras públicas de manera más rápida y eficiente. Estamos aquí para facilitar tu labor y brindarte todo el apoyo necesario. ¡Gracias por tu compromiso y dedicación!</h3>
+            <h3>Querido Monitor, te ofrecemos una nueva vía para que ingreses tus reportes, permitiéndote llevar a cabo
+                el control social en obras públicas de manera más rápida y eficiente. Estamos aquí para facilitar tu
+                labor y brindarte todo el apoyo necesario. ¡Gracias por tu compromiso y dedicación!</h3>
+            <section id="map"></section>
+            <div id="comments-container"></div>
+        </div>
+
+        <div class="main-content">
+            <h3>Querido Ciudadano, te damos la bienvenida a este espacio exclusivamente para ti. Aquí podras verificar
+                el progreso de obras o identificar zonas de riesgo relacionadas con el Fenómeno del Niño Costero.
+                Exprésate con 'Me gusta' o 'No me gusta', comparte tus comentarios y envíanos evidencia de obras
+                abandonadas o zonas de riesgo sin atención. Explora los detalles de las obras con un simple clic. Tu
+                participación es esencial para prevenir la corrupción, y qué mejor manera que con tu opinión y tus
+                evidencias. Agradecemos sinceramente tu valiosa contribución.</h3>
             <section id="map"></section>
             <div id="comments-container">
 
+            </div>
         </div>
+
+
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content flow-text">
+                    <h4 class="flow-text">Gracias Ciudadano 🫂🎉</h4>
+                    <p class="flow-text">Gracias por tu participación y por ponerte la camiseta con tu nación </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                </div>
+            </div>
+
+            <div id="likeButton" data-target="modal1" class="button btn modal-trigger flow-text"
+                onclick="handleInteraction('like')">👍 Like</div>
+            <span id="likeCount" class="count">0</span>
+
+            <div id="dislikeButton"  data-target="modal1" class="button  btn modal-trigger flow-text" onclick="handleInteraction('dislike')">👎 Dislike</div>
+            <span id="dislikeCount" class="count">0</span>
+        </div>
+
+
+        <a href="formulario.html">Clic aquí para registrar tus reportes de visita a las obras</a>
     </div>
 
+    <footer class="page-footer page__footer">
+        <div class="footer-copyright">
+            <div class="container flow-text">
+                © 2023 Copyright "Gestores de la Innovación"
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="scriptMonitor.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8"></script>
-    <div class="container">
-        <div id="likeButton" class="button" onclick="handleInteraction('like')">👍 Like</div>
-        <span id="likeCount" class="count"></span>
-        <div id="dislikeButton" class="button" onclick="handleInteraction('dislike')">👎 Dislike</div>
-        <span id="dislikeCount" class="count"></span>
-    </div>
-    <a href="formulario.html">Clic aquí para registrar tus reportes de visita a las obras</a>
-
 </body>
+
 </html>
-
-
-      
-
-  
-
