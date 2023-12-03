@@ -11,11 +11,46 @@ html, head {
   gap: 5px;
 }
 
-header {
-  background-color: #CA0000;
-  color: white;
-  padding: 10px;
+.geomonitor_title{
+  background-color: #0F2A44;
+  padding: 25px;
+  color: #fff;
+  font-size: 35px;
   text-align: center;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+/* COLUMNA 1: TEXTOS Y CONTENEDOR DE LIKES  */
+.geomonitor__container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 5px;
+  gap: 5px;
+}
+.geomonitor__column1{
+  background-color: #0f2a44;
+  padding: 14px;
+  margin-left: 1px;
+  margin-top: -21px;
+}
+.geomonitor__subtitle1 {
+  font-size: 17px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.5;
+  padding:  0 20px;
+}
+.info{
+  text-align: center;
+  line-height: 1;
+  color: #fff;
+  font-size: 17px;
+}
+/* COLUMNA 2: IMAGEN DEL MAPA */
+
+.geomonitor__column2 {
+  display: flex;
 }
 
 header h1 {
@@ -58,48 +93,22 @@ select {
   margin-top: 10px;
 }
 
-.button {
-  padding: 10px;
+
+.count {
+  padding: 8px;
+  border-radius: 0 5px 5px 0; 
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Estilos para el botón cuando se le ha dado 'like' */
-#likeButton {
-  background-color: #4CAF50; /* Verde cuando se ha dado like */
-}
-
-/* Estilos para el botón cuando se le ha dado 'dislike' */
-.dislikeButton {
-  background-color: #CA0000; /* Rojo cuando se ha dado dislike */
-}
-
-button:hover {
-  background-color: #555;
-}
-
-.question {
   font-weight: bold;
-}
-
-.mi-cuadro {
-  border: 2px solid #333;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #f0f0f0;
-}
-
-.observations {
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {
   background-color: #4CAF50;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 0px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -111,7 +120,7 @@ button:hover {
 
 .count {
   font-size: 18px;
-  margin: 9px 10px;
+  margin: 1px 10px;
 }
 
 .container-likes {
@@ -126,7 +135,7 @@ button:hover {
 
 /* Estilos para el enlace */
 a {
-  color: #CA0000;
+  color: #0F2A44;
   padding: 10px;
   text-decoration: none;
   font-size: 18px;
