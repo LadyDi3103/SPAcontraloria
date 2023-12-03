@@ -13,7 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const obrasApi = 'https://books-tsfn.onrender.com/Obras/'
 
-  let obrasReacciones ={}
+  let obrasReacciones ={};
+
+  function noRedSocial(){
+    document.getElementById('likeCount').innerText = "";
+    document.getElementById('dislikeCount').innerText = "";
+  }
+  
   
   async function fetchData(url, id) {
     try {
@@ -194,6 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const infoWindow = new google.maps.InfoWindow({
             content: `Tipo de Peligro: ${obra.nombre}<br>Fecha de Reporte: ${obra.FechaDeReporte}<br>Riesgo: ${obra.Clasificacion}`
           });
+
+          noRedSocial()
           infoWindow.open(mapa, marker);
         });
   

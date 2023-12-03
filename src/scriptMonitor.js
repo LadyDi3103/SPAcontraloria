@@ -12,12 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
   let likeCount = 0;
   let dislikeCount = 0;
   let ObraId = 0;
+
+  const obrasApi = 'https://books-tsfn.onrender.com/Obras/'
+
   
   let obrasReacciones2 ={}
+
+  function noRedSocial(){
+    document.getElementById('likeCount').innerText = "";
+    document.getElementById('dislikeCount').innerText = "";
+  }
   
-  async function fetchData() {
+  async function fetchData(url, id) {
     try {
-      const response = await fetch('https://books-tsfn.onrender.com/Obras/' + ObraId);
+      const response = await fetch(url + id);
       const data = await response.json();
   
       likeCount = data.like_total;
@@ -195,6 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const infoWindow = new google.maps.InfoWindow({
             content: `Tipo de Peligro: ${obra.nombre}<br>Fecha de Reporte: ${obra.FechaDeReporte}<br>Riesgo: ${obra.Clasificacion}`
           });
+
+          noRedSocial()
           infoWindow.open(mapa, marker);
         });
   
@@ -218,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
           ObraId = puente.currentId
   
-          fetchData();
+          fetchData(obrasApi, ObraId);
           infoWindow.open(mapa, marker);
         });
   
