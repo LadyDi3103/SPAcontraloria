@@ -28,11 +28,17 @@ html, head {
   margin-top: 5px;
   gap: 5px;
 }
-.geomonitor__column1{
+.geomonitor__column1 {
   background-color: #0f2a44;
   padding: 14px;
   margin-left: 1px;
   margin-top: -21px;
+  margin-bottom: 20px; /* Agrega margen inferior para separar del footer */
+}
+
+/* Footer */
+.page__footer {
+  margin-top: -12px; /* Reduce el margen superior del footer */
 }
 .geomonitor__subtitle1 {
   font-size: 17px;
@@ -133,30 +139,50 @@ select {
   margin-top: 18px;
 }
 
-/* Estilos para el enlace */
-a {
-  color: #0F2A44;
+/* Estilos para el enlace con la manito */
+.hand-link {
+  color: white;
   padding: 10px;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
   transition: color 0.3s ease-in-out;
   cursor: pointer;
+  position: relative;
 }
 
 /* Cambia el color cuando el enlace está en estado hover (ratón encima) */
-a:hover {
+.hand-link:hover {
   color: #0056b3;
 }
 
 /* Cambia el color cuando el enlace está en estado activo (haciendo clic) */
-a:active {
+.hand-link:active {
   color: #003366;
 }
 
 /* Cambia el color cuando el enlace ha sido visitado */
-a:visited {
+.hand-link:visited {
   color: #6600cc;
+}
+
+/* Agrega movimiento a la manito */
+.hand-link::after {
+  content: ' 🤚';
+  display: inline-block;
+  animation: waving 1s infinite;
+}
+
+@keyframes waving {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25%, 75% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
 }
 
 .img-person{

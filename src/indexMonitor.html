@@ -47,7 +47,6 @@
                 <p class="info">¡Gracias por tu compromiso y dedicación!</p>
                 <section id="map"></section>
                 <div id="comments-container"></div>
-
             </div>
 
             <!-- Modal Structure -->
@@ -62,20 +61,28 @@
             </div>
 
             <div class="container-likes">
-                <div id="likeButton" data-target="modal1"
-                    class="button btn modal-trigger flow-text" onclick="handleInteraction('like')">👍 Like</div>
+                <div id="likeButton" data-target="modal1" class="button btn modal-trigger flow-text"
+                    onclick="handleInteraction('like')">👍 Like</div>
                 <span id="likeCount" class="count"></span>
 
-                <div id="dislikeButton" data-target="modal1"
-                    class="button btn modal-trigger flow-text" onclick="handleInteraction('dislike')">👎 Dislike</div>
+                <div id="dislikeButton" data-target="modal1" class="button btn modal-trigger flow-text"
+                    onclick="handleInteraction('dislike')">👎 Dislike</div>
                 <span id="dislikeCount" class="count"></span>
             </div>
 
+            <a href="./formulario.html" class="hand-link">
+                Registra tus visitas a las obras aquí.
+            </a>
         </div>
-
-        <a href="formulario.html">"Registra tus visitas a las obras aquí."</a>
-
     </section>
+
+    <footer class="page-footer page__footer">
+        <div class="footer-copyright">
+            <div class="container flow-text">
+                © 2023 Copyright "Gestores de la Innovación"
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="scriptMonitor.js"></script>
