@@ -4,24 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transparencia Perú - Maps</title>
+    <title>Lucha contra la corrupción</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styleMonitor.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="./assets/img/favicon.jpg" />
-    <link rel="stylesheet" href="./styleMonitor.css">
 </head>
 
 <body>
     <header>
         <nav>
             <div class="nav-wrapper">
-                <img class="logo hide-on-small-only" src="./assets/img/logoGrandeSinFondo-removebg-preview.png"
+                <img class="logo hide-on-small-only" src=".//assets/img/logoGrandeSinFondo-removebg-preview.png"
                     alt="logoGrandeSinFondo-removebg-preview">
                 <p class="brand-logo flow-text">Transparencia Perú</p>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="index.html">Inicio</a></li>
+                    <!-- <li><a href="#">Prevención</a></li> -->
                     <li><a href="indexPeople.html">Geo-Colaborador</a></li>
                     <li><a href="login.html">Sesión Monitor</a></li>
                 </ul>
@@ -30,6 +31,7 @@
 
         <ul class="sidenav flow-text" id="mobile-demo">
             <li><a href="index.html">Inicio</a></li>
+            <!-- <li><a href="#">Prevención</a></li> -->
             <li><a href="indexPeople.html">Geo-Colaborador</a></li>
             <li><a href="login.html">Sesión Monitor</a></li>
         </ul>
@@ -40,39 +42,47 @@
     <section class="geomonitor__container">
         <div class="geomonitor__column1">
             <div class="geomonitor__column1-text">
-                <h2 class="geomonitor__subtitle1">QUERIDO MONITOR, te ofrecemos una nueva vía para que ingreses tus
-                    reportes, permitiéndote llevar a cabo el control social en obras públicas de manera más rápida y
-                    eficiente. Estamos aquí para facilitar tu labor y brindarte todo el apoyo necesario.</h2>
+            </div>
 
-                <p class="info">¡Gracias por tu compromiso y dedicación!</p>
+            <div class="main-content">
+                <h2 class="geomonitor__subtitle1">¡BIENVENIDO al espacio ciudadano dedicado al seguimiento 
+                    de obras y riesgos por el Fenómeno del Niño Costero. Expresa tu opinión 
+                    con 'Me gusta' o 'No me gusta'. Explora detalles de obras y zonas de riesgo con un 
+                    simple clic. Tu participación es clave para prevenir la corrupción.
+                    ¡Contamos contigo para construir un entorno más transparente y seguro!
+                </h3>
                 <section id="map"></section>
                 <div id="comments-container"></div>
-            </div>
 
-            <!-- Modal Structure -->
-            <div id="modal1" class="modal">
-                <div class="modal-content flow-text">
-                    <h4 class="flow-text">Gracias Ciudadano 🫂🎉</h4>
-                    <p class="flow-text">Gracias por tu participación y por ponerte la camiseta con tu nación </p>
+                <div class="container">
+                    <!-- Modal Trigger -->
+                    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content flow-text">
+                            <h4 class="flow-text">Gracias Ciudadano 🫂🎉</h4>
+                            <p class="flow-text">Gracias por tu participación y por ponerte la camiseta con tu nación </p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                        </div>
+                    </div>
+                    <div class="container-leyenda">
+                        <img class="Leyenda" src="./assets/img/leyenda.png">
+                    </div>
+                    <h2 class="geomonitor__subtitle1">¡Tu participación es esencial para crear un entorno más seguro y transparente!</h2>
+                   
+
+                    <div class="container-likes">
+                        <div id="likeButton" data-target="modal1" class="button btn modal-trigger flow-text" onclick="handleInteraction('like')">👍 Like</div>
+                        <span id="likeCount" class="count"></span>
+
+                        <div id="dislikeButton" data-target="modal1" class="button btn modal-trigger flow-text" onclick="handleInteraction('dislike')">👎 Dislike</div>
+                        <span id="dislikeCount" class="count"></span>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-                </div>
             </div>
-
-            <div class="container-likes">
-                <div id="likeButton" data-target="modal1" class="button btn modal-trigger flow-text"
-                    onclick="handleInteraction('like')">👍 Like</div>
-                <span id="likeCount" class="count"></span>
-
-                <div id="dislikeButton" data-target="modal1" class="button btn modal-trigger flow-text"
-                    onclick="handleInteraction('dislike')">👎 Dislike</div>
-                <span id="dislikeCount" class="count"></span>
-            </div>
-
-            <a href="./formulario.html" class="hand-link">
-                Registra tus visitas a las obras aquí.
-            </a>
         </div>
     </section>
 
@@ -85,9 +95,8 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="scriptMonitor.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8"></script>
+    <script src="scriptPeople.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvfefKeN9mncSrbhl0iO_shw0miCeF_8"></script>
 </body>
 
 </html>
