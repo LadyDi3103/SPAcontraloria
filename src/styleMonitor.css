@@ -1,220 +1,234 @@
 /* Estilos generales para resetear márgenes y rellenos */
 html, head {
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilos para el contenedor del encabezado */
-.containerheader {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-top: 5px;
-  gap: 5px;
-}
-
-/* Estilos para el título del Geo-colaborador */
-.geomonitor_title {
-  background-color: #0F2A44;
-  padding: 25px;
-  color: #fff;
-  font-size: 35px;
-  text-align: center;
-  margin-top: 5px;
-  margin-left: 2px;
-}
-
-/* Estilos para el contenedor principal */
-.geomonitor__container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-top: 5px;
-  gap: 5px;
-}
-
-/* Estilos para la columna principal de textos y contenedor de likes */
-.geomonitor__column1, .geomonitor__column3 {
-  background-color: #0f2a44;
-  padding: 14px;
-  margin-left: 1px;
-  margin-top: -21px;
-  margin-bottom: 20px; /* Agrega margen inferior para separar del footer */
-}
-
-/* Estilos para el pie de página */
-.page__footer {
-  margin-top: -12px; /* Reduce el margen superior del footer */
-}
-
-/* Estilos para subtítulos dentro de la columna principal */
-.geomonitor__subtitle1 {
-  font-size: 17px;
-  font-weight: 300;
-  color: #fff;
-  line-height: 1.5;
-  padding:  0 20px;
-}
-
-/* Estilos para información centrada */
-.info {
-  text-align: center;
-  line-height: 1;
-  color: #fff;
-  font-size: 17px;
-}
-
-/* Estilos para la columna de la imagen del mapa */
-.geomonitor__column2 {
-  display: flex;
-}
-
-/* Estilos para el encabezado h1 y p dentro de la cabecera */
-header h1 {
-  margin: 0;
-}
-
-header p {
-  font-style: italic;
-}
-
-/* Estilos para el mapa */
-#map {
-  width: 100%;
-  height: 400px;
-  margin-top: 20px;
-}
-
-/* Estilos para el grupo de formularios */
-.form-group {
-  display: grid;
-  gap: 10px;
-}
-
-/* Estilos para etiquetas de formularios */
-label {
-  font-weight: bold;
-}
-
-/* Estilos para campos de formularios */
-input, textarea, select {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  margin-top: 5px;
-}
-
-/* Estilos específicos para el campo de tipo archivo */
-input[type="file"] {
-  margin-top: 10px;
-}
-
-/* Estilos específicos para los botones de contador de likes/dislikes */
-.count {
-  padding: 8px;
-  border-radius: 0 5px 5px 0; 
-  color: white;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 0px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-/* Estilos para el contenedor de likes */
-.container-likes, .container-leyenda {
-  width: 100%;
-  color: black;
-  border-radius: 5px;
-  align-items: flex-end;
-  display: flex;
-  justify-content: center;
-  margin-top: 18px;
-}
-
-/* Estilos específicos para el contenedor de la leyenda */
-.container-leyenda {
-  width: 97%;
-  border-radius: 5px;
-  align-items: flex-end;
-  display: flex;
-  justify-content: center;
-  margin-top: -4px;
-}
-
-/* Estilos para la leyenda */
-.Leyenda {
-  width: 45%;
-}
-
-/* Estilos para el enlace con la manito */
-.hand-link {
-  color: white;
-  padding: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
-  cursor: pointer;
-  position: relative;
-}
-
-/* Cambia el color cuando el enlace está en estado hover (ratón encima) */
-.hand-link:hover {
-  color: #0056b3;
-}
-
-/* Cambia el color cuando el enlace está en estado activo (haciendo clic) */
-.hand-link:active {
-  color: #003366;
-}
-
-/* Cambia el color cuando el enlace ha sido visitado */
-.hand-link:visited {
-  color: #6600cc;
-}
-
-/* Agrega movimiento a la manito */
-.hand-link::after {
-  content: ' 🤚';
-  display: inline-block;
-  animation: waving 1s infinite;
-}
-
-/* Animación de la manito */
-@keyframes waving {
-  0%, 100% {
-    transform: rotate(0deg);
+    margin: 0;
+    padding: 0;
   }
-  25%, 75% {
-    transform: rotate(20deg);
+  
+  /* Estilos para el contenedor del encabezado */
+  .containerheader {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 5px;
+    gap: 5px;
   }
-  50% {
-    transform: rotate(-20deg);
+  
+  /* Estilos para el título del Geo-colaborador */
+  .geomonitor_title {
+    background-color: #0F2A44;
+    padding: 25px;
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 2px;
   }
-}
-
-/* Estilos para la imagen de la persona */
-.img-person {
-  display: flex;
-}
-
-/* Estilos adicionales para hacer más responsivo */
-@media only screen and (max-width: 600px) {
-  .form-container {
-    max-width: 100%;
+  
+  /* Estilos para el contenedor principal */
+  .geomonitor__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 5px;
+    gap: 5px;
   }
-}
+  
+  /* Estilos para la columna principal de textos y contenedor de likes */
+  .geomonitor_column1, .geomonitor_column3 {
+    background-color: #0f2a44;
+    padding: 14px;
+    margin-left: 1px;
+    margin-top: -21px;
+    margin-bottom: 20px; /* Agrega margen inferior para separar del footer */
+  }
+  
+  /* Estilos para el pie de página */
+  .page__footer {
+    margin-top: -12px; /* Reduce el margen superior del footer */
+  }
+  
+  /* Estilos para subtítulos dentro de la columna principal */
+  .geomonitor__subtitle1 {
+    font-size: 17px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.5;
+    padding:  0 20px;
+  }
+  
+  /* Estilos para información centrada */
+  .info {
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    font-size: 17px;
+  }
+  
+  /* Estilos para la columna de la imagen del mapa */
+  .geomonitor__column2 {
+    display: flex;
+  }
+  
+  /* Estilos para el encabezado h1 y p dentro de la cabecera */
+  header h1 {
+    margin: 0;
+  }
+  
+  header p {
+    font-style: italic;
+  }
+  
+  /* Estilos para el mapa */
+  #map {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para el grupo de formularios */
+  .form-group {
+    display: grid;
+    gap: 10px;
+  }
+  
+  /* Estilos para etiquetas de formularios */
+  label {
+    font-weight: bold;
+  }
+  
+  /* Estilos para campos de formularios */
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  
+  /* Estilos específicos para el campo de tipo archivo */
+  input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  /* Estilos específicos para los botones de contador de likes/dislikes */
+  .count {
+    padding: 8px;
+    border-radius: 0 5px 5px 0; 
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button {
+    background-color: #8fae90;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .button.clicked {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+  
+  /* Estilos para el contenedor de likes */
+  .container-likes, .container-leyenda {
+    width: 100%;
+    color: black;
+    border-radius: 5px;
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+  }
+  
+  /* Estilos específicos para el contenedor de la leyenda */
+  .container-leyenda {
+    width: 97%;
+    border-radius: 5px;
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    margin-top: -4px;
+  }
+  
+  /* Estilos para la leyenda */
+  .Leyenda {
+    width: 45%;
+  }
+  
+  /* Estilos para el enlace con la manito */
+  .hand-link {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Cambia el color cuando el enlace está en estado hover (ratón encima) */
+  .hand-link:hover {
+    color: #0056b3;
+  }
+  
+  /* Cambia el color cuando el enlace está en estado activo (haciendo clic) */
+  .hand-link:active {
+    color: #003366;
+  }
+  
+  /* Cambia el color cuando el enlace ha sido visitado */
+  .hand-link:visited {
+    color: #6600cc;
+  }
+  
+  /* Agrega movimiento a la manito */
+  .hand-link::after {
+    content: ' 🤚';
+    display: inline-block;
+    animation: waving 1s infinite;
+  }
+  
+  /* Animación de la manito */
+  @keyframes waving {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25%, 75% {
+      transform: rotate(20deg);
+    }
+    50% {
+      transform: rotate(-20deg);
+    }
+  }
+  
+  /* Estilos para la imagen de la persona */
+  .img-person {
+    display: flex;
+  }
+  
+  /* Estilos adicionales para hacer más responsivo */
+  @media only screen and (max-width: 600px) {
+    .form-container {
+      max-width: 100%;
+    }
+  }

@@ -329,12 +329,13 @@ button:hover {
 .title-news{
 padding-bottom: 20px;
 text-align: center;
-color: black;
+color: white;
 }
 
 .container-numbers-emergency {
 
   background-color: #CD312B;
+  border-radius: 15px;
 
 }
 .emergencyNumber{
@@ -343,4 +344,22 @@ color: black;
     padding: 10px 10px 0px;
     border-radius: 15px;
 
+}
+.title{
+  font-size: 15px;
+}
+.containerEmergency{
+  margin-bottom: 10px;
+}
+.imgEmergency {
+  height: 35px;
+}
+
+.emergencyNumber div p {
+  margin: 0 !important;
+}
+
+.emergencyNumber .emergencyMedic {
+   width: 60px;
+   padding-top: 5px;
 }
