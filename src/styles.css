@@ -277,10 +277,10 @@ button:hover {
 /* carousel */
 
 .carousel_images--first {
-  background-image: url(assets/carousel/carousel1.png);
+  background-image: url(assets/carousel/portada1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: bottom;
 }
 .carousel_images--first-title{
   margin-top: 60px;
@@ -362,4 +362,16 @@ color: white;
 .emergencyNumber .emergencyMedic {
    width: 60px;
    padding-top: 5px;
+}
+.card-content-p{
+  margin: 0px;
+  font-size: 15px;
+}
+.card-title-news{
+  color: black !important;
+  font-size: 20px !important;
+  margin-top: -15px;
+  margin-bottom: -36px;
+  position: initial !important;
+  font-weight: bold !important;
 }

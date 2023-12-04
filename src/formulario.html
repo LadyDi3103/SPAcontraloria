@@ -4,14 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reporte de visita de obra</title>
-  <link rel="stylesheet" href="formulario.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/jpg" href="./assets/img/favicon.jpg" />
 </head>
 <body>
   <header>
-    <div class="header-content">
-      <h1>REPORTE DE VISITA DE OBRA DEL MONITOR CIUDADANO DE CONTROL</h1>
-    </div>
+    <nav>
+      <div class="nav-wrapper ">
+        <img class="logo hide-on-small-only" src=".//assets/img/logoGrandeSinFondo-removebg-preview.png"
+          alt="logoGrandeSinFondo-removebg-preview">
+        <p class="brand-logo flow-text">Transparencia Perú</p>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Inicio</a></li>
+          <!-- <li><a href="#">Prevención</a></li> -->
+          <li><a href="indexPeople.html">Geo-Colaborador</a></li>
+          <li><a href="login.html">Sesión Monitor</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav flow-text" id="mobile-demo">
+      <li><a href="index.html">Inicio</a></li>
+      <!-- <li><a href="#">Prevención</a></li> -->
+      <li><a href="indexPeople.html">Geo-Colaborador</a></li>
+      <li><a href="login.html">Sesión Monitor</a></li>
+    </ul>
+
   </header>
+  
+  <div class="header-content">
+    <h1>REPORTE DE VISITA DE OBRA DEL MONITOR CIUDADANO DE CONTROL</h1>
+  </div>
 
   <div class="form-container">
     <form id="myForm">
@@ -463,7 +489,7 @@
       </div>
     </form>
   </div>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
