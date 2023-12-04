@@ -42,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error details:', error.message, error.stack);
     }
   }
+
+  let botonLike = document.getElementById('likeButton');
+  let botonDislike = document.getElementById('dislikeButton');
+
   
   async function handleInteraction(interactionType) {
     if (ObraId !== 0){
@@ -56,6 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
             likeCount = await updateCounter('like', likeCount - 1);
           }
           document.getElementById('likeCount').innerText = likeCount;
+
+          if (obrasReacciones[ObraId].likePressed) {
+            botonLike.classList.add('clicked');
+          } else {
+            botonLike.classList.remove('clicked');
+          }
   
         } else if (interactionType === 'dislike') {
           if (!obrasReacciones[ObraId].dislikePressed && !obrasReacciones[ObraId].likePressed) {
@@ -66,9 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
             obrasReacciones[ObraId].dislikePressed = false;
             dislikeCount = await updateCounter('dislike', dislikeCount - 1);
           }
+
+          document.getElementById('dislikeCount').innerText = dislikeCount;
+
+          if (obrasReacciones[ObraId].dislikePressed) {
+            botonDislike.classList.add('clicked');
+          } else {
+            botonDislike.classList.remove('clicked');
+          }
         }
   
-      document.getElementById('dislikeCount').innerText = dislikeCount;
     } else {
       document.getElementById('likeCount').innerText = "";
       document.getElementById('dislikeCount').innerText = "";
