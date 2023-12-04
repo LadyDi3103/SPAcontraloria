@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function handleInteraction(interactionType) {
   
     if (ObraId !== 0){
-        await fetchData();
+        await fetchData(obrasApi, ObraId);
   
         if (interactionType === 'like') {
           if (!obrasReacciones2[ObraId].likePressed && !obrasReacciones2[ObraId].dislikePressed) {
