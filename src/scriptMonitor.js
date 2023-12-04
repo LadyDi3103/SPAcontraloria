@@ -45,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
+  let botonLike = document.getElementById('likeButton');
+  let botonDislike = document.getElementById('dislikeButton');
+
+
   async function handleInteraction(interactionType) {
   
     if (ObraId !== 0){
@@ -60,6 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
             likeCount = await updateCounter('like', likeCount - 1);
           }
           document.getElementById('likeCount').innerText = likeCount;
+
+          if (obrasReacciones2[ObraId].likePressed) {
+            botonLike.classList.add('clicked');
+          } else {
+            botonLike.classList.remove('clicked');
+          }
+
   
         } else if (interactionType === 'dislike') {
           if (!obrasReacciones2[ObraId].dislikePressed && !obrasReacciones2[ObraId].likePressed) {
@@ -72,6 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
           }
           document.getElementById('dislikeCount').innerText = dislikeCount;
+
+          if (obrasReacciones2[ObraId].dislikePressed) {
+            botonDislike.classList.add('clicked');
+          } else {
+            botonDislike.classList.remove('clicked');
+          }
         }
     } else {
       document.getElementById('likeCount').innerText = "";
