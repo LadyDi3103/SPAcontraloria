@@ -20,28 +20,36 @@ html, head {
     color: #fff;
     font-size: 35px;
     text-align: center;
-    margin-top: 5px;
-    margin-left: 2px;
+    margin: 7px 2px 25px 2px;
   }
   
   /* Estilos para el contenedor principal */
   .geomonitor__container {
+    background-color: #0f2a44;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    margin-top: 5px;
+    margin-top: -20px;
     gap: 5px;
   }
   
   /* Estilos para la columna principal de textos y contenedor de likes */
-  .geomonitor_column1, .geomonitor_column3 {
+  .geomonitor_column1 {
     background-color: #0f2a44;
     padding: 14px;
     margin-left: 1px;
     margin-top: -21px;
     margin-bottom: 20px; /* Agrega margen inferior para separar del footer */
+
   }
-  
+
+  .form {
+    width: 100%;
+    margin-top: 10px;
+    border: 3px solid #fff;
+    margin-bottom: 10px;
+   }
+
   /* Estilos para el pie de página */
   .page__footer {
     margin-top: -12px; /* Reduce el margen superior del footer */
@@ -158,6 +166,11 @@ html, head {
     justify-content: center;
     margin-top: 18px;
   }
+  .container-leyenda {
+    width: 100%;
+    border: 3px solid #fff;
+  
+  }
   
   /* Estilos específicos para el contenedor de la leyenda */
   .container-leyenda {
@@ -232,3 +245,7 @@ html, head {
       max-width: 100%;
     }
   }
+
+
+
+
