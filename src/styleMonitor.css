@@ -111,7 +111,7 @@ select {
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: #8fae90;
   color: white;
   border: none;
   padding: 0px 20px;
@@ -123,6 +123,21 @@ select {
   border-radius: 5px;
   margin-right: 10px;
 }
+
+.button.clicked {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
 
 .count {
   font-size: 18px;

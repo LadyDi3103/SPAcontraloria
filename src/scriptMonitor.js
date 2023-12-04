@@ -18,7 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let obrasReacciones2 ={}
 
+  let botonLike = document.getElementById('likeButton');
+  let botonDislike = document.getElementById('dislikeButton');
+
   function noRedSocial(){
+    ObraId = 0
+    botonLike.classList.remove('clicked');
+    botonDislike.classList.remove('clicked');
     document.getElementById('likeCount').innerText = "";
     document.getElementById('dislikeCount').innerText = "";
   }
@@ -37,6 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
       if(!obrasReacciones2.hasOwnProperty(ObraId)){
         obrasReacciones2[ObraId] = {likePressed: false, dislikePressed: false}
       }
+
+      if (obrasReacciones2[ObraId].likePressed) {
+        botonLike.classList.add('clicked');
+        } else {
+        botonLike.classList.remove('clicked');
+        }
+
+        if (obrasReacciones2[ObraId].dislikePressed) {
+        botonDislike.classList.add('clicked');
+        } else {
+        botonDislike.classList.remove('clicked');
+        }
   
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -45,10 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
-  async function handleInteraction(interactionType) {
+   async function handleInteraction(interactionType) {
   
     if (ObraId !== 0){
-        await fetchData();
+        await fetchData(obrasApi, ObraId);
   
         if (interactionType === 'like') {
           if (!obrasReacciones2[ObraId].likePressed && !obrasReacciones2[ObraId].dislikePressed) {
@@ -60,6 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
             likeCount = await updateCounter('like', likeCount - 1);
           }
           document.getElementById('likeCount').innerText = likeCount;
+
+          if (obrasReacciones2[ObraId].likePressed) {
+            botonLike.classList.add('clicked');
+          } else {
+            botonLike.classList.remove('clicked');
+          }
+
   
         } else if (interactionType === 'dislike') {
           if (!obrasReacciones2[ObraId].dislikePressed && !obrasReacciones2[ObraId].likePressed) {
@@ -72,6 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
           }
           document.getElementById('dislikeCount').innerText = dislikeCount;
+
+          if (obrasReacciones2[ObraId].dislikePressed) {
+            botonDislike.classList.add('clicked');
+          } else {
+            botonDislike.classList.remove('clicked');
+          }
         }
     } else {
       document.getElementById('likeCount').innerText = "";
